@@ -47,7 +47,7 @@
         }
     },
     "demo": "https://thenorthpoletimes.com",
-    "description": "Beautiful and festive theme that is easy and comfortable to use. Now with snow effect!",
+    "description": "Beautiful and festive theme that is easy and comfortable to use. Now with snow effect, LLM support and more!",
     "engines": {
         "ghost": ">=5.0.0"
     },
