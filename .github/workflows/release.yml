@@ -10,19 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Build zip
-        run: |
-          mkdir -p build
-          zip -r build/project.zip . \
-            -x ".git/*" \
-            -x ".github/*" \
-            -x ".gitignore"
-
       - name: Create GitHub Release
-        id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -33,13 +21,3 @@ jobs:
             Automated release for tag ${{ github.ref_name }}.
           draft: false
           prerelease: false
-
-      - name: Upload Zip Asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: build/project.zip
-          asset_name: project.zip
-          asset_content_type: application/zip
