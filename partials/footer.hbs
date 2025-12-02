@@ -1,0 +1,16 @@
+{{!--
+This footer template is shared across all the pages.
+--}}
+
+<footer class="m-footer">
+  <div class="m-footer__content">
+    {{#if @site.secondary_navigation}}
+      <nav class="m-footer__nav-secondary" role="navigation" aria-label="{{t "Secondary menu in footer"}}">
+        {{navigation type="secondary"}}
+      </nav>
+    {{/if}}
+    <p class="m-footer-copyright">
+      <span>{{@site.title}} &copy; {{date format="YYYY"}}</span>
+    </p>
+  </div>
+</footer>

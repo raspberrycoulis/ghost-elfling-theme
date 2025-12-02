@@ -1,0 +1,29 @@
+{{!--
+This navigation template is shared across all the pages.
+Also it includes the big submenu.
+--}}
+
+{{#if isSecondary}}
+  <ul class="m-secondary-menu">
+    {{#foreach navigation}}
+      <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}">
+        <a href="{{url absolute="true"}}">{{label}}</a>
+      </li>
+    {{/foreach}}
+  </ul>
+{{else}}
+  {{#foreach navigation}}
+    <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}">
+      <a href="{{url absolute="true"}}">{{label}}</a>
+    </li>
+  {{/foreach}}
+    <li style="margin-right: 5px;">
+        <img class="support-icon" style="width: 25px;" src="{{asset "images/icon-present.svg"}}" alt="Support us with a one-off donation"/>
+      </a>
+    </li>
+    <li>
+      <a style="font-weight: 900;" href="/#/portal/support" data-umami-event="header-support-us">
+        Support Us
+      </a>
+    </li>
+{{/if}}

@@ -1,0 +1,23 @@
+{{!--
+If the template in question has a background image, then we render responsive image styles
+for it, and apply those styles to the <header> tag.
+--}}
+
+{{#if background}}
+  <section class="m-hero with-picture" data-animate="fade">
+    <div class="m-hero__picture {{#is "post"}}in-post{{/is}}">
+      <img
+        srcset="
+          {{img_url background size="s" format="webp"}} 300w,
+          {{img_url background size="m" format="webp"}} 600w,
+          {{img_url background size="l" format="webp"}} 1000w,
+          {{img_url background size="xl" format="webp"}} 2000w
+        "
+        sizes="(max-width: 600px) 600px, (max-width: 1000px) 1000px, 2000px"
+        src="{{img_url background size="l" format="webp"}}"
+        alt="{{#if alt}}{{alt}}{{else}}{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{bio}}{{/if}}{{/if}}"
+      />
+    </div>
+{{else}}
+  <section class="m-hero no-picture {{#is "post"}}in-post{{/is}}" data-animate="fade">
+{{/if}}
