@@ -13,6 +13,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build ZIP with tag-based filename
+        run: |
+          VERSION="${{ github.ref_name }}"
+          mkdir -p build
+          zip -r "build/elfling-${VERSION}.zip" . \
+            -x "build/*" \
+            -x ".git/*" \
+            -x ".github/*" \
+            -x ".gitignore"
+
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         env:
@@ -21,5 +34,5 @@ jobs:
           tag_name: ${{ github.ref_name }}
           name: ${{ github.ref_name }}
           body: Automated release for tag ${{ github.ref_name }}.
-          draft: false
-          prerelease: false
+          files: |
+            build/elfling-${{ github.ref_name }}.zip
