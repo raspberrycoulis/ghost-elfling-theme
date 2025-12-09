@@ -69,8 +69,8 @@
     "license": "MIT",
     "name": "elfling",
     "screenshots": {
-        "desktop": "assets/screenshot-desktop.jpg",
-        "mobile": "assets/screenshot-mobile.jpg"
+        "desktop": "assets/screenshot-desktop.png",
+        "mobile": "assets/screenshot-mobile.png"
     },
-    "version": "2.2.4"
+    "version": "2.2.5"
 }
