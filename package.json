@@ -47,7 +47,7 @@
         }
     },
     "demo": "https://thenorthpoletimes.com",
-    "description": "Beautiful and festive theme that is easy and comfortable to use. Now with snow effect, LLM support and more!",
+    "description": "Beautiful and festive theme that is easy and comfortable to use. Now with snow effect, LLM support and more! Has custom search on the Nice and Naughty List pages.",
     "engines": {
         "ghost": ">=5.0.0"
     },
@@ -72,5 +72,5 @@
         "desktop": "assets/screenshot-desktop.png",
         "mobile": "assets/screenshot-mobile.png"
     },
-    "version": "2.2.5"
+    "version": "2.2.6"
 }
