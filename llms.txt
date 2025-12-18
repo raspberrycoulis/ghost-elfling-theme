@@ -7,11 +7,15 @@
 
 - [Privacy Policy](https://thenorthpoletimes.com/privacy/): Privacy matters but it can be confusing. This page explains our approach to privacy on this website and how it affects you.
 - [Terms](https://thenorthpoletimes.com/terms/): Our Terms
+- [The Elf Help Desk](https://thenorthpoletimes.com/the-elf-help-desk/): Are you unsure about something? Need to find out more? Let The Elf Help Desk guide you!
 - [The Naughty List](https://thenorthpoletimes.com/the-naughty-list/): The definitive Naughty List, used by Santa Claus!
 - [The Nice List](https://thenorthpoletimes.com/the-nice-list/): The definitive Nice List, used by Santa Claus!
 
 ## Posts
 
+- [Should Santa Swap His Sleigh for a Flying DeLorean?](https://thenorthpoletimes.com/should-santa-swap-his-sleigh-for-a-flying-delorean/): Santa’s thinking about trading his trusty sleigh for a flying DeLorean DMC-12! He says it would be warmer, faster, and oh-so-cool. Should he really do it, though?
+- [Mrs Claus and the Secret of the Naughty and Nice Lists](https://thenorthpoletimes.com/mrs-claus-and-the-secret-of-the-naughty-and-nice-lists/): Mrs Claus shares how she helps Santa manage the Naughty and Nice Lists, with stories of kindness, mischief, and a rather heroic Aston Villa footballer.
+- [Rudolph’s Global Navigation Training: The Reindeer Who Knows the World by Heart](https://thenorthpoletimes.com/rudolphs-global-navigation-training-the-reindeer-who-knows-the-world-by-heart/): Rudolph’s been brushing up on his global navigation skills, ensuring the Reindeer team can fly through any weather and every landscape with the skill of a London Cabbie – but worldwide!
 - [Buddy’s Big Christmas Countdown: Spreading Cheer, One Giggle at a Time!](https://thenorthpoletimes.com/buddys-big-christmas-countdown-spreading-cheer-one-giggle-at-a-time/): Buddy the Elf spreads laughter and joy as he prepares for the big day. From singing carols to marshmallow mischief, find out how he’s keeping the North Pole full of festive cheer!
 - [How I Keep Everyone Motivated at the North Pole](https://thenorthpoletimes.com/how-i-keep-everyone-motivated-at-the-north-pole/): Santa reveals his festive secrets for keeping the elves and reindeer motivated in the final weeks before Christmas, filled with cheer, teamwork and magic!
 - [The Magic of December Begins: Christmas Preparations at the North Pole](https://thenorthpoletimes.com/the-magic-of-december-begins-christmas-preparations-at-the-north-pole/): It’s 1st December, and Mrs Claus reveals the joyful bustle at the North Pole as Santa, the elves, and the reindeer begin their magical preparations for Christmas.
@@ -91,7 +95,7 @@ As part of our subscriptions, we offer the chance to add children's names to the
 ---
 
 - Published: 2022-11-16
-- Modified: 2024-05-07
+- Modified: 2025-12-10
 - Author: Santa Claus
 - URL: https://thenorthpoletimes.com/terms/
 
@@ -123,8 +127,26 @@ We will happily issue a refund if you contact us via ghost@thenorthpoletimes.com
 
 ---
 
+- Published: 2025-12-10
+- Modified: 2025-12-11
+- Author: Buddy the Elf
+- URL: https://thenorthpoletimes.com/the-elf-help-desk/
+
+The world can be a confusing place, especially when magic and mystery is involved! Here, our members can find answers to some of the most common questions asked.
+I CAN’T SEE MY NAME ON THE NICE OR NAUGHTY LIST!
+Santa is a very busy man! Whilst he and his team of Elves are always working and busy updating the Nice and Naughty Lists regularly, sometimes things take a little longer than expected, so keep checking every now and then.
+Also, have you considered signing up for our Santa’s Little Helper or Santa’s Chief of Staff plans? Be sure to ask a parent for permission to upgrade and then reach out to us as described on our Terms page.
+I’M A SANTA’S LITTLE HELPER / SANTA’S CHIEF OF STAFF MEMBER, HOW DO I LOGIN?
+Fantastic! You just need to use the “My Account” link at the top of the page, and follow the instructions on the screen. Alternatively you can login to your account using this link.
+IS SANTA REAL?
+Yes, he absolutely is. Here at The North Pole Times we see him every day, checking The Nice List, nibbling biscuits and preparing for his Christmas Eve journey. Santa is the magic behind the twinkling lights, the flying reindeer and all the kindness children show at Christmas. He’s very real - and very proud of you.
+HOW DO I CHANGE MY PLAN TO A FREE ONE?
+We understand, sometimes plans change and that’s fine! You can change your plan at any time via your account or by using the “My Account” link at the top of the page.
+
+---
+
 - Published: 2025-12-06
-- Modified: 2025-12-09
+- Modified: 2025-12-12
 - Author: Santa Claus
 - URL: https://thenorthpoletimes.com/the-naughty-list/
 
@@ -133,7 +155,7 @@ If you can't find your name on here, be sure to check the Nice List just in case
 View the Nice List
 To save Santa some time, the list is organised by the first letter of the boy / girl's surname!
 Search the Naughty List
-Type at least two letters. We’ll search both the main Naughty List and the members’ extra names (if you're logged in).
+Type at least two letters. We’ll search both the main Naughty List and the members’ extra names.
 Start typing above to see if your name appears on Santa’s Naughty List.
 EXTRA NAUGHTY LIST MEMBERS ONLY
 A special extended section of the Naughty List, unlocked for North Pole Times members.
@@ -162,7 +184,6 @@ Additional Naughty List entries, surnames beginning with A–D.
  * Bennett, Ewan
  * Bishop, Aisling
  * Blake, Zara
- * Bly, Priya
  * Carstens, Irene
  * Chase, Heather
  * Clark, Emma
@@ -724,7 +745,6 @@ Surnames from Eargle to Hyde
 I – L
 Surnames from Irwin to Lyons
  * Irwin, Chris
- * Isak, Alexander
  * Jackson, Diane
  * Jackson, Mattie
  * Jackson, Rueben
@@ -1270,12 +1290,11 @@ Surnames from Uchida to Zamora
  * Zamora, Shawn
 ↑ Back to top
 Ho ho ho! Even Santa’s workshop needs a little help now and then. If you enjoy our updates, a tiny sprinkle of support helps keep The North Pole Times merry and bright for children everywhere.
-Support Us
 
 ---
 
 - Published: 2025-12-06
-- Modified: 2025-12-09
+- Modified: 2025-12-18
 - Author: Santa Claus
 - URL: https://thenorthpoletimes.com/the-nice-list/
 
@@ -1314,11 +1333,14 @@ Additional Nice List entries, surnames beginning with A–D.
  * Benton, Robert
  * Bergin, Thomas
  * Bly, Josef
+ * Bly, Priya
  * Bodin, George
  * Brantley, John
  * Briscoe, Evelyn
  * Brockman, Larry
  * Buendia, Emi
+ * Cantrell, Gabriel
+ * Cantrell, Isabella
  * Catron, Ashlee
  * Cornell, Donald
  * Doran, Vanessa
@@ -2425,18 +2447,81 @@ Surnames from Underwood to Zuluaga
  * Zuluaga, Ray
 ↑ Back to top
 Ho ho ho! Even Santa’s workshop needs a little help now and then. If you enjoy our updates, a tiny sprinkle of support helps keep The North Pole Times merry and bright for children everywhere.
-Support Us
 
 ---
 
 ## Posts
+
+- Published: 2025-12-15
+- Modified: 2025-12-17
+- Author: Santa Claus
+- URL: https://thenorthpoletimes.com/should-santa-swap-his-sleigh-for-a-flying-delorean/
+
+Hello there, my festive friends!
+Santa here, writing to you from my warm and wonderfully busy North Pole workshop. The elves are hard at work - tinkering, toymaking, and, rather mischievously, humming the Back to the Future theme tune on repeat. Why, you ask? Well… I may be toying with a rather unusual idea this year.
+You see, for as long as anyone can remember, my sleigh has been the most reliable ride on (and above) Earth. It’s carried me through blizzards, over mountaintops, across oceans, and once right past a very surprised airline pilot. But lately, while enjoying a quiet evening by the fire with a mug of cocoa and one of my favourite films, a shiny idea has taken hold - whirling through my mind like a tinsel-covered tornado.
+What if… just what if… I swapped my sleigh for a flying DeLorean?
+Yes, that DeLorean. The one from Back to the Future Part II!
+Picture it: gull-wing doors that open like magic, fairy lights twinkling along the sides, candy-cane stripes on the bonnet, and a glowing red nose where the number plate should be. Forget “OUTATIME” - my plate would say “HOHOHO,” obviously.
+Ho ho ho! Even Santa’s workshop needs a little help now and then. If you enjoy our updates, a tiny sprinkle of support helps keep The North Pole Times merry and bright for children everywhere.
+Now, before you worry, don’t panic - the reindeer haven’t been made redundant. I mentioned the idea over dinner last week, and Rudolph gave me the look. You know the one. Dasher, on the other hand, seemed rather keen - he’s always been the speed enthusiast of the group. And I have to admit, the idea of heated seats, a built-in hot chocolate holder, and Christmas tunes on the stereo instead of howling wind at 30,000 feet? Tempting, very tempting.
+But then again, my trusty sleigh runs on pure Christmas spirit. It doesn’t need petrol, batteries, or even a flux capacitor. It’s never broken down, never gotten stuck in traffic, and it’s powered by your belief - and that’s something no engine on Earth can replicate.
+So, I’m torn. Should I stick with the faithful sleigh that’s served me for centuries, or take a festive leap into the future in a turbo-charged DeLorean?
+What do you think? Write and tell me - I always say the magic of Christmas starts with your imagination. And who knows? Maybe there’s room in the skies for both…
+Warm wishes (and warmer cocoa), Santa
+
+---
+
+- Published: 2025-12-13
+- Modified: 2025-12-13
+- Author: Mrs Claus
+- URL: https://thenorthpoletimes.com/mrs-claus-and-the-secret-of-the-naughty-and-nice-lists/
+
+Hello there, my little Christmas stars!
+Mrs. Claus here, writing to you from my warm, flour-dusted kitchen at the North Pole. The smell of cinnamon biscuits is in the air, the cocoa’s steaming, and the elves are definitely sneaking extra treats when they think I’m not looking. But even with all the baking going on, I’ve got another very important job - helping Santa keep track of the Naughty and Nice Lists.
+Ho ho ho! Even Santa’s workshop needs a little help now and then. If you enjoy our updates, a tiny sprinkle of support helps keep The North Pole Times merry and bright for children everywhere.
+Each day, Santa and I get updates from our magical Scout Elves who are out and about all over the world. They tell us about kind gestures, good manners, and, occasionally, a few cheeky missteps. But let me tell you a secret: the lists aren’t about being perfect - none of us are! It’s about learning, growing, and choosing kindness, especially when it’s not the easiest option.
+Now, the Naughty List doesn’t happen because of one bad moment. It’s for repeated choices - telling fibs, being unkind, or misbehaving when you know better. Just ask Alexander Isak. Santa had to raise an eyebrow when he threw a festive-sized strop over leaving Newcastle United. Oh dear… definitely a few lumps of coal with his name on them! But here’s the good news: the Naughty List isn’t permanent. Say sorry, try harder, and you’ll soon find your name shining on the Nice List again.
+Speaking of which, the Nice List is where the real Christmas magic happens. It’s filled with names of those who help, listen, share, and make the world a brighter place. Take Aston Villa’s John McGinn, for example. Not only is he a fantastic footballer, but he turned something tough into something truly special. His famous “goggles” celebration? That’s for his nephew, who was being bullied for wearing glasses. Instead of ignoring it, John made it a symbol of pride and joy. Santa and I were so moved, we gave him a gold star beside his name that very night.
+So, my lovelies, just remember: every little choice you make adds a sprinkle of magic to one list or the other. Be kind. Be honest. Help others. Share your toys (yes, even the good ones!). The more joy you spread, the brighter your name shines.
+Now, I must dash - those mince pies won’t bake themselves, and the reindeer have very good noses. Keep being wonderful. Santa and I are keeping an eye on things with full hearts and twinkling eyes.
+With love and a sprinkle of cinnamon, Mrs. Claus
+
+---
+
+- Published: 2025-12-10
+- Modified: 2025-12-10
+- Author: Rudolph
+- URL: https://thenorthpoletimes.com/rudolphs-global-navigation-training-the-reindeer-who-knows-the-world-by-heart/
+
+Hey there, frosty friends!
+Rudolph here - yes, the red-nosed one - checking in from the North Pole, where the snow’s fresh, the cocoa’s hot, and the reindeer training field looks suspiciously like an airport built entirely out of candy canes.
+Since last Christmas, I’ve been sharpening my navigational skills. You’d think having a glowing nose would make flying a breeze, right? Not quite. Guiding Santa’s sleigh across a changing world takes a bit more than a flashy snout. Cities grow, forests shift, rivers change direction, and even the stars like to play musical chairs on some nights. So I’ve been brushing up with maps, weather charts, and flight routes. Mrs. Claus calls me a “reindeer boffin.” I choose to take that as a compliment.
+Santa likes to say we’re basically the London cab drivers of the sky. Except instead of memorising one city, we’ve got to know everything. From the snowy rooftops of Norway to the red-hot dunes of Australia, we need what you humans call “The Knowledge” - just scaled up to global proportions.
+ * Dasher’s been revising city layouts
+ * Prancer’s brushing up on major landmarks
+ * And Vixen? She’s perfecting tight landings for tricky chimney situations. She’s also very proud of her “reverse take-off technique”… we’re not asking.
+But it’s not just about knowing where to go - it’s about getting there safely. Fog, snowstorms, gale-force winds… we’ve flown through it all. This year, Santa’s challenged us to be smoother, faster, and more efficient than ever. So each evening, we run practice flights. Picture this: we’re soaring through the skies, dodging imaginary clouds, calling out landmarks - “Big Ben on the left! Eiffel Tower straight ahead!” Great fun. Except Donner insists on yelling, “Are we there yet?” during every single run.
+So when you’re curled up in bed on Christmas Eve, just know - we’ve done our prep. The world may keep changing, but with a bit of magic, a whole lot of training, and one slightly overachieving red nose, we’ll get to every home on time. No sat nav required.
+And if Santa does get lost? Don’t worry - I’ve got “The Knowledge.”
+
+---
 
 - Published: 2025-12-07
 - Modified: 2025-12-07
 - Author: Buddy the Elf
 - URL: https://thenorthpoletimes.com/buddys-big-christmas-countdown-spreading-cheer-one-giggle-at-a-time/
 
-Hey there, friends! Buddy the Elf here - chief giggler, marshmallow connoisseur, and full-time Christmas cheer champion! Can you believe it? The countdown to Christmas is officially on, and up here at the North Pole, things are going brilliantly… or should I say snowingly? The workshop is buzzing with elves painting, hammering, and wrapping gifts at full speed—you’d think their candy canes were jet-propelled. Santa’s been starting our mornings with his famous “Jingle Jolt” sessions (he mentioned them last week, remember?), and nothing gets the elf feet moving like some bouncy Christmas tunes. I’ve even been bringing my candy-cane drum to add a little rhythm… although Santa calls my solos “energetic.” I’m still not sure if that’s a compliment or a polite plea to tone it down before I rattle the sleigh off its runners. Over in Reindeer Training, Rudolph’s been showing off some seriously impressive moves. He’s working on a new flight routine that makes barrel rolls look like gentle snowflake twirls. I asked if I could join in, but apparently elves don’t have wings yet. I’m not giving up hope. Meanwhile, Mrs. Claus is turning the kitchen into a winter wonderland of smells—mince pies, chocolate chip cookies, and something called “peppermint puff pastry.” I’m convinced it’s made entirely of magic and sugar. This week, I’m in charge of keeping spirits high, so I’ve been running our daily “Giggle Games” - a friendly competition to see which elf can make the others laugh the hardest. Right now, Twinkle’s in the lead after dressing up as a Christmas pudding and rolling through the workshop shouting, “Dessert incoming!” Absolute legend. If you want to join the fun from home, try a little cheer-spreading of your own! Sing a carol (yes, out loud), leave a kind note for someone, or build a snowman with the silliest hat you can find. Remember what I always say: “The best way to spread Christmas cheer is singing loud for all to hear!” With just a few weeks to go, every smile, laugh, and kind gesture helps keep the magic alive - from your home all the way up here at the North Pole. So keep smiling, keep singing, and whatever you do… don’t skimp on the marshmallows. Stay jolly, Buddy the Elf
+Hey there, friends! Buddy the Elf here - chief giggler, marshmallow connoisseur, and full-time Christmas cheer champion! Can you believe it? The countdown to Christmas is officially on, and up here at the North Pole, things are going brilliantly… or should I say snowingly?
+The workshop is buzzing with elves painting, hammering, and wrapping gifts at full speed—you’d think their candy canes were jet-propelled. Santa’s been starting our mornings with his famous “Jingle Jolt” sessions (he mentioned them last week, remember?), and nothing gets the elf feet moving like some bouncy Christmas tunes. I’ve even been bringing my candy-cane drum to add a little rhythm… although Santa calls my solos “energetic.” I’m still not sure if that’s a compliment or a polite plea to tone it down before I rattle the sleigh off its runners.
+Over in Reindeer Training, Rudolph’s been showing off some seriously impressive moves. He’s working on a new flight routine that makes barrel rolls look like gentle snowflake twirls. I asked if I could join in, but apparently elves don’t have wings yet. I’m not giving up hope.
+Meanwhile, Mrs. Claus is turning the kitchen into a winter wonderland of smells—mince pies, chocolate chip cookies, and something called “peppermint puff pastry.” I’m convinced it’s made entirely of magic and sugar.
+This week, I’m in charge of keeping spirits high, so I’ve been running our daily “Giggle Games” - a friendly competition to see which elf can make the others laugh the hardest. Right now, Twinkle’s in the lead after dressing up as a Christmas pudding and rolling through the workshop shouting, “Dessert incoming!” Absolute legend.
+If you want to join the fun from home, try a little cheer-spreading of your own! Sing a carol (yes, out loud), leave a kind note for someone, or build a snowman with the silliest hat you can find. Remember what I always say: “The best way to spread Christmas cheer is singing loud for all to hear!”
+With just a few weeks to go, every smile, laugh, and kind gesture helps keep the magic alive - from your home all the way up here at the North Pole.
+So keep smiling, keep singing, and whatever you do… don’t skimp on the marshmallows.
+Stay jolly,
+Buddy the Elf
 
 ---
 
@@ -2447,12 +2532,15 @@ Hey there, friends! Buddy the Elf here - chief giggler, marshmallow connoisseur,
 
 Well, would you look at that - it’s already the 5th of December! Hard to believe, isn’t it? Just twenty more sleeps until Christmas, and the buzz up here at the North Pole is enough to power the sleigh on excitement alone.
 Now, between you and me, keeping the crew motivated this close to the big day takes a bit more than fairy dust. The elves are working flat out in the workshop, the reindeer are up early each morning training, and Mrs Claus is keeping us all going with her legendary peppermint biscuits. Still, even when we’re knee-deep in wrapping paper and toy parts, keeping the mood merry is absolutely key.
-Every morning kicks off with our “Jingle Jolt” meeting. The elves gather, the music starts - usually something upbeat chosen by Buddy the Elf on his candy-cane drum - and we give a big cheer for all the toys completed the day before. You should see their faces light up when their work gets a shoutout. Then, I give them a quick reminder of why we do all this in the first place: to bring joy to children across the world. That little reminder always brings a sparkle to their eyes - brighter than the tree in the town square. The reindeer? They’re a whole different story. Motivation for them means one thing: healthy competition. They absolutely love their training flights. I’m there on the sidelines, cheering them on as they zip through the frosty skies. Rudolph still leads the pack, but Dasher and Vixen are closing the gap fast this year. We keep it playful with a game we call “Sleigh Tag” -a fast-paced race with extra points for style and teamwork. Honestly, you’ve never seen a happier bunch of flying reindeer. Once the day winds down, everyone gathers in the Great Hall for hot cocoa, biscuits, and a few stories from Christmases gone by. It’s a little tradition of ours - a reminder that we’re more than a team; we’re a family. And every snow-dusted sleigh ride, toy built, and sparkle of glitter is part of something bigger. So, that’s our secret to staying motivated: a dash of fun, a heap of heart, and never losing sight of what Christmas really means. Now, if you’ll excuse me, I’ve got a few toys to check - and maybe, just maybe, room for one more biscuit.
+Every morning kicks off with our “Jingle Jolt” meeting. The elves gather, the music starts - usually something upbeat chosen by Buddy the Elf on his candy-cane drum - and we give a big cheer for all the toys completed the day before. You should see their faces light up when their work gets a shoutout. Then, I give them a quick reminder of why we do all this in the first place: to bring joy to children across the world. That little reminder always brings a sparkle to their eyes - brighter than the tree in the town square.
+The reindeer? They’re a whole different story. Motivation for them means one thing: healthy competition. They absolutely love their training flights. I’m there on the sidelines, cheering them on as they zip through the frosty skies. Rudolph still leads the pack, but Dasher and Vixen are closing the gap fast this year. We keep it playful with a game we call “Sleigh Tag” -a fast-paced race with extra points for style and teamwork. Honestly, you’ve never seen a happier bunch of flying reindeer.
+Once the day winds down, everyone gathers in the Great Hall for hot cocoa, biscuits, and a few stories from Christmases gone by. It’s a little tradition of ours - a reminder that we’re more than a team; we’re a family. And every snow-dusted sleigh ride, toy built, and sparkle of glitter is part of something bigger.
+So, that’s our secret to staying motivated: a dash of fun, a heap of heart, and never losing sight of what Christmas really means. Now, if you’ll excuse me, I’ve got a few toys to check - and maybe, just maybe, room for one more biscuit.
 
 ---
 
 - Published: 2025-12-01
-- Modified: 2025-12-02
+- Modified: 2025-12-17
 - Author: Mrs Claus
 - URL: https://thenorthpoletimes.com/the-magic-of-december-begins-christmas-preparations-at-the-north-pole/
 
@@ -2466,7 +2554,7 @@ So, as December begins, remember this: while we’re working hard up here in the
 ---
 
 - Published: 2024-12-25
-- Modified: 2024-12-25
+- Modified: 2025-12-10
 - Author: Santa Claus
 - URL: https://thenorthpoletimes.com/reflecting-on-a-magical-christmas-eve/
 
@@ -2479,39 +2567,33 @@ Rudolph:
 I have to say, I’m feeling pretty proud of myself tonight! My nose shone so brightly, guiding Santa’s sleigh safely to all the homes, and we did it! We’ve delivered every last present, and the reindeer are now enjoying some well-earned rest. I’ll be taking a nap soon too, as the night has been long, but so full of joy. Christmas Eve is always so special, and it’s an honour to be part of it. I’m looking forward to resting and then getting ready to do it all over again next year. Merry Christmas to everyone—may your hearts be full of cheer!
 ----------------------------------------
 So now, with everything done, we all settle in for a well-deserved rest. The magic of Christmas lives on in our hearts, and we can’t wait to do it all again next year. Merry Christmas to all, and to all, a peaceful night!
+Ho ho ho! Even Santa’s workshop needs a little help now and then. If you enjoy our updates, a tiny sprinkle of support helps keep The North Pole Times merry and bright for children everywhere.
 
 ---
 
 - Published: 2024-12-24
-- Modified: 2025-12-01
+- Modified: 2025-12-10
 - Author: Santa Claus
 - URL: https://thenorthpoletimes.com/the-final-touches-before-christmas-eve/
 
 Ho, ho, ho! Christmas Eve is finally here, and I can hardly believe it! The elves have been working so hard, and now it’s time for the final touches before I set off on my big journey. I’m busy checking the sleigh, making sure it’s packed with all the wonderful presents for the children on the Nice list. The toys are all wrapped up and ready to go, and there’s plenty of space for those special last-minute gifts that always seem to appear!
 First, I double-check the list—yup, I’ve checked it twice, and I’ve made sure that every single child on the Nice list gets something extra special this year. There’s nothing like the joy of seeing the smiles on the children’s faces when they wake up to their presents. It’s the best part of the job, and it’s what makes all the hard work worth it.
-The Nice List | The North Pole Times
-The definitive Nice List, used by Santa Claus!
-The North Pole TimesSanta Claus
-Are you still on the Nice list?
 Next, I make sure my reindeer are ready. I give each of them a little pat and a word of encouragement. Dasher, Dancer, Prancer, Vixen, Comet, Cupid, Donner, and Blitzen are all excited, but it’s Rudolph who’s especially ready to shine tonight. His nose is glowing bright and strong, and he’s looking forward to guiding us through the night sky. I give him an extra wink and remind him how important his job is, leading us safely to all the homes around the world.
 The elves have packed plenty of snacks for the reindeer—carrots, of course, and some special treats for them to nibble on during the trip. And I’ve got a big thermos of hot cocoa for myself! It’s always good to stay warm on a cold Christmas Eve night. There’s nothing like a hot cup of cocoa to keep me going as I make my way around the world delivering presents.
 Before I head out, I take a moment to look around the workshop. It’s so quiet now, with everyone asleep, but I can feel the magic in the air. The North Pole feels especially cosy tonight, and I know that all the joy we’ve been spreading all year long is about to come to life in a big way.
 So, with everything ready, I climb into the sleigh, give my reindeer the signal, and off we go! The adventure of Christmas Eve is about to begin, and I can’t wait to bring joy to boys and girls all over the world. Merry Christmas to all, and to all, a good night! Ho, ho, ho!
-The Naughty List | The North Pole Times
-The definitive Naughty List, used by Santa Claus!
-The North Pole TimesSanta Claus
-Have you been put on the Naughty List?
 
 ---
 
 - Published: 2024-12-21
-- Modified: 2024-12-21
+- Modified: 2025-12-10
 - Author: Mrs Claus
 - URL: https://thenorthpoletimes.com/mrs-clauss-favourite-christmas-recipes/
 
 Hi there, my dear friends! It’s Mrs Claus, and today I’m thrilled to share with you some of my most treasured Christmas recipes. I hope you’ll try them at home and enjoy them just like Santa, Rudolph, Buddy the Elf, and the rest of the elves here at the North Pole do. After all, Christmas is a time for love, joy, and of course, delicious treats!
 First up, we have my Gingerbread Cookies. These are a big hit with everyone, especially Santa! He loves them because they’re crunchy on the outside and soft on the inside. I like to decorate them with little icing faces and colourful sprinkles – it makes them look so festive! Santa always asks for extra gingerbread to munch on after his long night of delivering presents. The smell of them baking fills the air, and it makes everyone feel cosy and excited for Christmas Eve.
 Next, there’s Candy Cane Cupcakes. These are my special treat that Buddy the Elf loves to help me make. He’s always so enthusiastic (and a bit messy with the sprinkles, I might add!). I bake vanilla cupcakes and top them with a swirl of peppermint frosting. To make them even more fun, I break up candy canes and sprinkle them on top for a minty crunch. The elves say the peppermint gives them the extra “Christmas magic” they need to keep working hard in the toy workshop. I think it just makes them smile, and that’s what counts, right?
+Ho ho ho! Even Santa’s workshop needs a little help now and then. If you enjoy our updates, a tiny sprinkle of support helps keep The North Pole Times merry and bright for children everywhere.
 Then, of course, there’s Hot Chocolate with Marshmallows. This one’s perfect for warming up after a busy day of preparing for Christmas. Santa loves to sip on it while reading letters from children all over the world. And do you know what the best part is? I always add extra marshmallows, so every sip is like a sweet, fluffy cloud! The elves love a cup too, especially after making toys all day long. It’s a big part of our Christmas cheer here at the North Pole.
 So, why does everyone love these recipes so much? Well, it’s because they remind us of all the happy moments we share together during Christmas. Baking treats brings the North Pole to life with laughter and warmth. It’s the little things, like sharing gingerbread cookies or sipping hot chocolate together, that make Christmas so special.
 I hope you try these recipes and share them with your family. Just remember, the most important ingredient in any Christmas recipe is a big spoonful of love. Merry Christmas, my sweet little friends!
@@ -2519,7 +2601,7 @@ I hope you try these recipes and share them with your family. Just remember, the
 ---
 
 - Published: 2024-12-18
-- Modified: 2024-12-18
+- Modified: 2025-12-10
 - Author: Buddy the Elf
 - URL: https://thenorthpoletimes.com/buddy-the-elfs-top-5-elf-on-the-shelf-ideas/
 
@@ -2529,47 +2611,36 @@ That’s right – even we elves play the game! Every December, the elves and I 
 One of my favourite ideas is setting up a candy cane swing. We hang it on the edge of a shelf, and our elf swings back and forth as if they’re having the time of their life! It’s like a mini playground right in your house.
 2. MARSHMALLOW SNOWMAN
 Next, we love to create a tiny snowman using marshmallows. We stick them together with icing and give it a little face. Then, our elf sits next to the snowman, as if they’ve just built it. It’s snowy fun indoors!
-The Nice List
-The definitive Nice List, used by Santa Claus!
-The North Pole TimesSanta Claus
-Are you still on the Nice list?
 3. WRAPPING PAPER SURPRISE
 For this one, our elf hides inside a roll of wrapping paper. Imagine pulling out some paper to wrap a present, and – surprise! There’s your elf peeking out, all snug and cosy.
 4. ELF ZIP LINE
 This is a big hit with the reindeer! We string a bit of ribbon from one end of the room to the other and clip our elf to it. The elf looks like they’re zooming across the room. Whoosh! It’s so much fun.
 5. HOT CHOCOLATE PARTY
 Finally, we set up a tiny hot chocolate party with mini cups, marshmallows, and sprinkles. Our elf sits in the middle, holding a cup as if they’re having a warm drink after a chilly day at the North Pole.
-The Naughty List
-The definitive Naughty List, used by Santa Claus!
-The North Pole TimesSanta Claus
-Have you been put on the Naughty List?
 The best part about Elf on the Shelf is the laughter and joy it brings. We elves love to imagine how excited you’ll be when you find your elf in a new spot every morning. Remember, your elf is there to keep an eye on you and report back to Santa. So, keep smiling, be kind, and maybe even share some of your own ideas with your family.
 Well, that’s all from me for now! I’ve got to get back to the workshop – the elves and I are planning tomorrow’s Elf on the Shelf surprise. Merry Christmas, and happy hiding!
 
 ---
 
 - Published: 2024-12-15
-- Modified: 2024-12-15
+- Modified: 2025-12-10
 - Author: Santa Claus
 - URL: https://thenorthpoletimes.com/follow-my-journey-with-the-santa-tracker/
 
 Ho, ho, ho! Greetings, my little friends! I’m writing to you from my cosy workshop at the North Pole, where the festive magic is in full swing! The elves are hard at work, the reindeer are polishing their hooves, and my sleigh is nearly ready for the big night! I wanted to tell you all about something magical that happens every Christmas Eve – the Santa Tracker!
 Now, you might be wondering, “Santa, what’s a Santa Tracker?” Well, let me explain. It’s a clever way for you and your family to follow my journey as I deliver presents to children all around the world. From the moment I leave the North Pole, the tracker shows where I’m flying, which countries I’ve visited, and how many presents I’ve delivered. Isn’t that exciting?
+Ho ho ho! Even Santa’s workshop needs a little help now and then. If you enjoy our updates, a tiny sprinkle of support helps keep The North Pole Times merry and bright for children everywhere.
 Every year, as the clock strikes midnight on Christmas Eve, my reindeer and I take off into the starry sky. First, we fly over snowy rooftops, then across glittering cities, and even above warm beaches! With the Santa Tracker, you can see exactly where we are. You might spot me zooming past your house if you’re quick!
 The elves love the Santa Tracker too. They keep an eye on it back at the North Pole to make sure everything is going smoothly. Buddy the Elf always giggles when he sees me flying over a volcano or a jungle – he says it’s not what you’d expect for a sleigh ride!
 But do you know the best part about the Santa Tracker? It reminds you to go to bed early. That’s because I can’t deliver presents if you’re still awake. So, when you see I’m getting close to your town, it’s time to snuggle under the covers and close your eyes tight.
 Oh, and don’t forget to leave out some treats for me and the reindeer. I do love a mince pie and a glass of milk, and the reindeer would be delighted with a carrot or two.
 So, my dear friends, when Christmas Eve arrives, gather your family around the Santa Tracker, and let’s share the magic of Christmas together. Remember, I’ll be checking my Nice List as I go – so be kind, be helpful, and keep those big smiles on your faces.
 Merry Christmas to you all, and ho, ho, ho!
-The Nice List
-The definitive Nice List, used by Santa Claus!
-The North Pole TimesSanta Claus
-Are you still on the Nice list?
 
 ---
 
 - Published: 2024-12-13
-- Modified: 2024-12-13
+- Modified: 2025-12-10
 - Author: Rudolph
 - URL: https://thenorthpoletimes.com/a-day-in-the-life-of-rudolph-the-red-nosed-reindeer/
 
@@ -2578,10 +2649,6 @@ First of all, things at the North Pole are buzzing! Every elf and reindeer is wo
 Speaking of training, did you know that guiding Santa’s sleigh isn’t just about flying fast? It’s a very important job, especially when there’s fog or snowstorms. My shiny nose helps light the way so we don’t miss any houses. That’s why the elves call it the “Rudolph's Sleigh Guidance system.” Pretty clever, don’t you think?
 When I’m not training, I love popping into the workshop to see what the elves are up to. They’re absolute geniuses when it comes to making toys. Last week, Buddy the Elf showed me how they build toy cars. It’s top-secret, though, so I can’t tell you too much. But I can say this: the elves have the best toy-making secrets, and they’re always inventing new, exciting toys for children like you.
 Now, I know many of you are wondering about Santa’s famous Nice List. It’s true – Santa checks it twice! He tells me it’s very important to be kind, listen to your parents, and help your friends. He sees everything you do, and I promise you, he’s always looking for reasons to put names on the Nice List. So, keep being your best self, okay?
-The Nice List
-The definitive Nice List, used by Santa Claus!
-The North Pole TimesSanta Claus
-Are you still on the Nice list?
 Finally, the Christmas preparations at the North Pole are in full swing. The big tree in the square is covered in sparkling lights, the workshop is bustling, and Santa is double-checking his maps. Everyone has a job to do, and it’s all so magical.
 Well, I’d better dash! The reindeer team and I have another practice flight soon, and I’ve got to shine my nose. Remember, keep being kind, stay on the Nice List, and always believe in the magic of Christmas.
 Merry Christmas to you and your family!
@@ -2589,7 +2656,7 @@ Merry Christmas to you and your family!
 ---
 
 - Published: 2024-12-10
-- Modified: 2024-12-10
+- Modified: 2025-12-10
 - Author: Santa Claus
 - URL: https://thenorthpoletimes.com/a-jolly-walk-down-toy-lane-santa-reminisces-about-the-last-few-christmas-toy-crazes/
 
@@ -2598,25 +2665,17 @@ Ho ho ho! Santa here, with a warm mug of cocoa and a smile as I think back on th
 A few years ago, there was a fidgeting frenzy, with spinners everywhere! Kids loved these clever little gadgets that kept their fingers busy and helped them stay focused. I must admit, I tried one myself (though I’m better at making toys than spinning them!). These toys certainly earned their place on Santa's Nice List — fun and practical!
 2. COLLECTIBLE TOYS
 Next, we saw the rise of collectible toys like LOL Surprise! dolls and Hatchimals. There’s something magical about finding a little surprise inside a toy, and children couldn’t wait to see what they would get. It was wonderful to watch kids swap and trade their treasures, and it’s no surprise these made the Nice List!
-The Nice List
-The definitive Nice List, used by Santa Claus!
-The North Pole TimesSanta Claus
-Are you still on the Nice list?
 3. INTERACTIVE & TECH TOYS
 The last few years have also brought a surge in tech toys — from smart robots to interactive pets. These clever gadgets have made a big impact, with children enjoying all the tricks and features they can control. Even I was amazed by how advanced some of these toys are! And yes, they all made it to Santa's Nice List.
 4. CLASSIC TOYS THAT NEVER GO OUT OF STYLE
 Of course, some toys never lose their magic. LEGO sets, board games, and stuffed animals are still as loved as ever. Whether you’re building a castle or playing with a cuddly friend, these timeless toys will always be a hit at Christmas. And they’re always on the Nice List!
 As we look forward to the next Christmas season, I can’t wait to see what new toys will capture your imagination. No matter what’s popular, the true magic of Christmas lies in giving and sharing joy — and that’s what makes it all special.
 Ho ho ho, Merry Christmas to all, and to all a wonderful toy-filled year!
-The Naughty List
-The definitive Naughty List, used by Santa Claus!
-The North Pole TimesSanta Claus
-Have you been put on the Naughty List?
 
 ---
 
 - Published: 2024-12-06
-- Modified: 2024-12-07
+- Modified: 2025-12-10
 - Author: Mrs Claus
 - URL: https://thenorthpoletimes.com/how-i-help-santa-with-the-naughty-and-nice-lists/
 
@@ -2626,48 +2685,33 @@ Well, I’m Mrs Claus, and I live here at the North Pole with Santa and all the 
 HOW I KEEP TRACK OF THE NAUGHTY AND NICE LISTS
 I have a very special, magical book that helps me. This book isn’t just a regular book—oh no! It has the names of every child in the world, and it’s filled with all sorts of magical notes. When someone does something kind—like helping a friend, saying “thank you,” or being polite to their parents—I write it down in my book. But if a child forgets to be nice, the book gives me a gentle reminder to help them be better next time. I believe everyone can learn and grow!
 I also have help from the elves. Some of them are very good at keeping an eye out for good behaviour, and they send me updates about which children are being extra kind. That way, Santa and I know exactly who should be on the Nice List!
-The Naughty List
-The definitive Naughty List, used by Santa Claus!
-The North Pole TimesSanta Claus
-Have you been put on the Naughty List?
 MY MAGICAL HELPERS
 I’m not alone in this job—oh no! I have some magical helpers. The elves are always busy making toys, but a few of them help me by watching for kindness. There are even magical snowflakes that swirl around my book, showing me the best moments of kindness that happen all around the world. So, when you help your friend or give a hug to someone who’s sad, those snowflakes might just be watching!
 MY ADVICE FOR STAYING ON THE NICE LIST
 Now, you might be wondering, “Mrs Claus, how can I stay on the Nice List?” Well, it’s very simple! The best way to stay on the Nice List is by being kind every day. It’s not about being perfect, because no one is perfect. But if you try your best to be kind—whether it’s helping your family, being nice to your friends, or just using your best manners—you’ll definitely make it to the Nice List! And if you ever make a mistake, don’t worry! You can always make up for it by doing something kind the next day.
 HOW DO I STAY ON SANTA'S NICE LIST?
 So, remember this: every time you do something nice, I’m taking note in my magical book. If you try your best to be kind and caring, you’ll always be on the Nice List in my heart. And you’ll help make the world a little brighter, just like Christmas lights!
-The Nice List
-The definitive Nice List, used by Santa Claus!
-The North Pole TimesSanta Claus
-Are you still on the Nice list?
 
 ---
 
 - Published: 2024-12-02
-- Modified: 2024-12-02
+- Modified: 2025-12-10
 - Author: Buddy the Elf
 - URL: https://thenorthpoletimes.com/buddy-the-elfs-top-secret-toy-making-tips/
 
 Seasons greetings. It's Buddy the Elf, here to share a little secret about how we make all those toys for Christmas. It's a big job, but it's a whole lot of fun.
 First, we listen. We listen to the wind, the birds, and even the trees. We listen to the kids, the parents, and even the grumpy old folks. They whisper secrets about what toys are cool, what's not so cool, and what every kid wants most.
 Then, we do some elf magic. We count and calculate, and we use a special kind of maths that only elves understand. We figure out how many kids there are in the whole world, and how many toys each one might want. It's a lot of numbers, but it's fun elf maths!
-The Nice List
-The definitive Nice List, used by Santa Claus!
-The North Pole TimesSanta Claus
-Are you still on the Nice list?
 Our reindeer friends are super helpful too. They fly all over the world, checking on every kid and every house. They let us know if there are any new little ones who need toys.
 And of course, there's Mrs. Claus, the queen of cookies and kindness. She knows everything about everyone, and she helps us keep track of who's been naughty and who's been nice.
 But the most important thing is the Christmas spirit. We make toys with love and care, and we hope they bring joy to every child.
 So, the next time you see a toy under the tree, remember the elves who made it with love. And remember, we're always listening to your wishes.
-The Naughty List
-The definitive Naughty List, used by Santa Claus!
-The North Pole TimesSanta Claus
-Have you been put on the Naughty List?
+
 
 ---
 
 - Published: 2024-11-30
-- Modified: 2024-11-30
+- Modified: 2025-12-10
 - Author: Rudolph
 - URL: https://thenorthpoletimes.com/how-rudolph-guides-the-sleigh/
 
@@ -2675,10 +2719,6 @@ Hi there! It’s Rudolph, the Red-Nosed Reindeer. You’ve probably heard how my
 HOW SANTA’S REINDEER FIND THEIR WAY
 Leading the sleigh takes more than just a glowing nose. My nose isn’t just a light; it interacts with the Earth’s magnetic field, helping me chart the safest and fastest route. It’s like having a built-in compass and radar system.
 Santa and I also plan in advance. We combine celestial navigation (stars are great guides!) with advanced GPS to map out our journey. This preparation ensures that even if we face blizzards or unexpected obstacles, we can stay on track and deliver every gift on time.
-The Nice List
-The definitive Nice List, used by Santa Claus!
-The North Pole TimesSanta Claus
-Are you still on the Nice list?
 CAN REINDEER FLY?
 Yes, Santa’s reindeer can fly—but it’s not something all reindeer can do. Our ability to soar through the skies comes from a special magical dust created by Mrs. Claus. Combined with rigorous training, it gives us the power to take off and stay airborne.
 Flying isn’t just about magic, though—it’s also about fitness. Every year, the reindeer team trains to ensure they’re fast, efficient, and silent. I help lead these sessions, especially focusing on night flying, teaching younger reindeer how to manoeuvre in low visibility and follow my light.
@@ -2693,10 +2733,6 @@ Our training includes:
 • Stealth Flying: Practicing silent gliding so we don’t wake sleeping children.
 • Teamwork Drills: Strengthening coordination to ensure we stay in formation.
 These sessions not only build strength but also foster trust, which is key when flying as a team.
-The Naughty List
-The definitive Naughty List, used by Santa Claus!
-The North Pole TimesSanta Claus
-Have you been put on the Naughty List?
 A CHRISTMAS EVE TO REMEMBER
 So, how Santa’s reindeer find their way and deliver joy worldwide? It’s a combination of preparation, teamwork, and a little magic. Leading the sleigh is an honor, and every year, I’m proud to guide the team through the skies.
 This Christmas Eve, as you look up, know that it’s not just magic guiding the sleigh—it’s training, trust, and my glowing red nose lighting the way. Merry Christmas to all!
@@ -2750,7 +2786,7 @@ So, thanks to a little bit of creativity and a whole lot of Christmas spirit, th
 ---
 
 - Published: 2023-12-18
-- Modified: 2023-12-18
+- Modified: 2025-12-10
 - Author: Mrs Claus
 - URL: https://thenorthpoletimes.com/mrs-claus-magical-christmas-message/
 
@@ -2762,15 +2798,11 @@ Think of Christmas as a giant, sparkly snowflake made up of family and friends. 
 Santa and I, we love to see your happy faces on Christmas morning. But, more importantly, we love to see you being kind, caring, and sharing the joy with those around you. That's the secret recipe for a truly magical Christmas!
 So, this Christmas, remember to be kind, share your love, and make wonderful memories with your family and friends. That's the true meaning of Christmas, my dear little ones.
 Wishing you all a holly-jolly Christmas full of love, laughter, and the warmest of hugs!
-The Nice List
-The definitive Nice List, used by Santa Claus!
-The North Pole TimesSanta Claus
-Are you still on the Nice list?
 
 ---
 
 - Published: 2023-12-11
-- Modified: 2023-12-21
+- Modified: 2025-12-10
 - Author: Santa Claus
 - URL: https://thenorthpoletimes.com/how-santa-decides/
 
@@ -2778,22 +2810,14 @@ I've got some secrets to share with you about how I decide who's on the Naughty 
 Now, you see, my marvellous elves and I are always watching over everyone throughout the year. We have a magical way of keeping an eye on all the boys and girls around the world. We pay attention to the kindness and good deeds that warm our hearts.
 Firstly, being kind to others is very important. If you share your toys, help your friends, and listen to your parents and teachers, that's a big thumbs up! It's like sprinkling a little extra Christmas magic on your name or achieving a Class DoJo point!
 But, if you're not so nice and you end up on the Naughty list, don't worry too much. We all make mistakes, and there's always time to make things right. Apologising and trying to be better is the best way to get back on the Nice list, so if you have been naughty recently, why not go and apologise and make up for it now?
-The Naughty List
-The definitive Naughty List, used by Santa Claus!
-The North Pole TimesSanta Claus
-Have you been put on the Naughty List?
 Another thing I look for is how you treat your pets. Being gentle and loving towards animals is a sure way to land on the Nice list. Remember, Rudolph and his reindeer pals are part of my extended family, and they love kindness just as much as I do!
 Now, here's the biggest secret of all – the power of saying 'please' and 'thank you.' Manners make everything merrier! When you use those magic words, it puts a big smile on my face, and you'll find your name shining brightly on the Nice list.
 So, my dear little ones, keep spreading joy, kindness, and a sprinkle of magic wherever you go. Santa and his team are always cheering you on, and we can't wait to deliver the most wonderful gifts to all the good boys and girls on Christmas Eve. Merry Christmas to you all!
-The Nice List
-The definitive Nice List, used by Santa Claus!
-The North Pole TimesSanta Claus
-Or are you still on the Nice list?
 
 ---
 
 - Published: 2023-12-08
-- Modified: 2023-12-21
+- Modified: 2025-12-10
 - Author: Rudolph
 - URL: https://thenorthpoletimes.com/rudolphs-christmas-adventure/
 
@@ -2802,10 +2826,6 @@ First things first, we gather at the North Pole with the whole reindeer crew –
 Santa and his team of elves have been working very hard to create a special route that takes us to every house, bungalow, flat and apartment block. It's like a super-duper magical treasure map, and we need to make sure we don't miss anyone!
 We start by checking the weather, making sure it's just right for a smooth sleigh ride. Santa's weather elves give us the scoop on snowfall, wind direction, and temperature – we wouldn't want Santa to catch a cold, would we?
 Then, we look at the time zones around the world. Since not everyone celebrates Christmas at the same time, we need to be careful with our timing. Santa's special watch helps us keep track so we can deliver presents at just the right moment.
-The Nice List
-The definitive Nice List, used by Santa Claus!
-The North Pole TimesSanta Claus
-Are you still on the Nice list?
 As we plan, the elves help us load up the sleigh with presents, making sure we have something special for everyone. It's like a giant game of present Tetris, and the elves are the masters!
 Once everything's set, Santa gives us a jolly thumbs up, and off we go, zooming across the starry sky. With my glowing red nose leading the way, we follow our magical map, spreading joy and cheer to children far and near.
 So, my little friends, on Christmas Eve, when you hear the jingle of bells and the patter of reindeer hooves on your roof, know that Santa and I have carefully planned our route just for you. Wishing you the merriest Christmas ever!
@@ -2813,17 +2833,13 @@ So, my little friends, on Christmas Eve, when you hear the jingle of bells and t
 ---
 
 - Published: 2023-12-04
-- Modified: 2023-12-04
+- Modified: 2025-12-10
 - Author: Mrs Claus
 - URL: https://thenorthpoletimes.com/decorating-santas-workshop/
 
 Hello, little elves and dear friends! It's your jolly friend Mrs. Claus here, and I'm bursting with excitement because something magical is happening in Santa's Workshop at the North Pole – we're decorating for Christmas!
 Picture this: the elves are buzzing around like busy bees, putting on their tiniest hats and tiniest shoes to make our workshop look as festive as can be. We've got gingerbread baking in the oven and twinkling lights that sparkle like the snow outside.
 Now, you might be wondering, why do we decorate? Well, it's simple! Decorating the workshop brings joy and cheer to everyone working hard to make toys for all the good boys and girls around the world. When the workshop is filled with Christmas spirit, the toys seem to come to life with extra magic!
-The Naughty List
-The definitive Naughty List, used by Santa Claus!
-The North Pole TimesSanta Claus
-Have you been put on the Naughty List?
 This year, we have a special team of elves in charge of creating giant paper snowflakes. They carefully cut and fold each snowflake, making sure they're as unique as the real ones falling outside. We tape them to the walls, and suddenly, our workshop is transformed into a winter wonderland!
 And what's Christmas without a tree? Oh, the biggest, most splendid tree you've ever seen stands proudly in the centre of our workshop. The elves and I decorate it with baubles, tinsel, and even tiny toy trains that go 'round and 'round. It's a sight to behold!
 So, as we deck the halls and put the final touches on our festive workshop, we're sending our warmest wishes to all the boys and girls eagerly waiting for Santa's visit. May your Christmas be merry and bright, just like our workshop here at the North Pole!
@@ -2833,7 +2849,7 @@ Mrs. Claus
 ---
 
 - Published: 2023-11-27
-- Modified: 2023-11-27
+- Modified: 2025-12-10
 - Author: Buddy the Elf
 - URL: https://thenorthpoletimes.com/how-santas-elves-prepare-for-christmas/
 
@@ -2844,10 +2860,6 @@ And then there are the reindeer – Rudolph and his gang. We give them the VIP t
 Now, the best part – wrapping presents! We dive into a sea of colourful paper, ribbons, and bows. It's like a present-wrapping (gift-wrapping to our American friends) party, and we make each one as special on the outside as it is inside.
 As Christmas Eve creeps closer, we gather in the courtyard, sing carols, and get really excited for the big night. We also help Santa update the Nice and Naughty lists, mostly by popping in and visiting your homes in the build up to Christmas - you won't see us though, as we are experts at staying hidden! Then, with a twinkle in Santa's eye and a booming "Ho, ho, ho!" off we go, spreading joy to kids all over the globe.
 So, little sprouts, when you unwrap that amazing present on Christmas morning, know it's made with elfin love and delivered with heaps of Christmas cheer. Merry Christmas, and may your days be super merry and full of fun!
-The Nice List
-The definitive Nice List, used by Santa Claus!
-The North Pole TimesSanta Claus
-Are you still on the Nice list?
 
 ---
 
@@ -2903,7 +2915,6 @@ Ok, I've said too much already! You'll need to keep being good to be sure to be 
 Delivering presents to nearly 2 billion children who are on The Nice List across the world is very tiring work! Keeping the energy levels of Santa, the reindeer and the team of elves up is also a challenging task, but one that thankfully has been made easier thanks to the generosity of all the girls and boys Santa visits every year, who often leave out snacks before they go to bed on Christmas Eve.
 But just what foods does Santa and the team like?
 SANTA LOVES MINCE PIES
-Photo by Jonathan Farber / Unsplash
 Think of Christmas and you'll probably think of mince pies - those tasty cakes filled with mixed fruit, spices and other goodies - and one of Santa's favourites! But have you ever tried eating 3 mince pies? 10? 100? How about 2 billion?! Now, Santa really does appreciate every mince pie left out by the Christmas tree by every single one of you, but eating that many mince pies is a challenge in itself!
 SANTA LOVES OTHER FESTIVE TREATS
 Every year, once Santa returns from his grand delivery, he often mentions how he loves other festive bites that have been left out for him - these are some of his favourites:
@@ -2914,7 +2925,6 @@ Every year, once Santa returns from his grand delivery, he often mentions how he
  * Marzipan - an almond flavoured confectionary that is often shaped like fruits, or added as a layer inside cakes ("What is Marzipan?")
 So Santa pretty much loves anything festive and convenient on his travels!
 DOES SANTA LIKE A DRINK TOO?
-Photo by Thomas Park / Unsplash
 When you travel almost 100 million miles around the world in a single night, it's not surprising that you tend to get thirsty! Again, Santa is absolutely amazed by how many boys and girls leave him a drink when he drops by! Here are some of Santa's favourites:
  * Water - nothing refreshes you as much as a glass of fresh water
  * Brandy - travelling in the middle of the night is cold work! A little sip of brandy often helps keep Santa warm on his journey
@@ -2922,7 +2932,6 @@ When you travel almost 100 million miles around the world in a single night, it'
  * Whisky - often left by girls and boys in Scotland, Ireland, some parts of England and Japan, Santa enjoys this luxurious treat whenever a "wee dram" is left out for him
  * Milk - a great alternative if Santa is feeling a bit full from his snacks, but fancies a little drink
 WHAT ABOUT RUDOLPH AND THE ELVES?
-Photo by Terriell Scrimager / Unsplash
 Reindeer are simple, yet majestic animals and they love a nice, crunchy carrot. Not only does this orange vegetable perk them up, it also provides a great source of vitamin A that helps Rudolph and his team of trusty reindeer see just that little bit better in the middle of the night!
 Elves are definitely creatures with a sweet tooth - they absolutely love anything sweet and sugary! Chocolate coins? Yep! Candy canes? You bet! Gum drops? Most certainly! If it is sugary and sweet, then you can guarantee that the Elves will love them!
 SANTA, THE REINDEER AND THE ELVES JUST APPRECIATE ANYTHING LEFT OUT FOR THEM
