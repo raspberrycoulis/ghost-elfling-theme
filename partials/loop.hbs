@@ -4,7 +4,7 @@
   {{#is "post"}}
     <div class="m-recommended-slider__item swiper-slide">
   {{/is}}
-  <article class="m-article-card {{#unless feature_image}}no-picture{{/unless}} {{post_class}}">
+  <article class="m-article-card np-post-{{id}} {{#unless feature_image}}no-picture{{/unless}} {{post_class}}">
     <div class="m-article-card__picture">
       <a href="{{url}}" class="m-article-card__picture-link" aria-hidden="true" tabindex="-1"></a>
       {{#if feature_image}}
@@ -18,8 +18,9 @@
         {{/if}}
       </a>
       {{#if featured}}
-        <a href="{{url}}" class="m-article-card__featured js-tooltip" data-tippy-content="{{t "Featured"}}" aria-label="{{t "Featured"}}">
+        <a href="{{url}}" class="m-article-card__featured np-pick-badge" aria-label="{{t "Santa's pick"}}: {{title}}">
           <span class="icon-star" aria-hidden="true"></span>
+          <span>{{t "Santa's pick"}}</span>
         </a>
       {{/if}}
     </div>
@@ -31,14 +32,18 @@
     {{/if}}
       <a href="{{url}}" class="m-article-card__info-link" aria-label="{{title}}">
         <div>
-          <h2 class="m-article-card__title js-article-card-title {{#unless feature_image}}js-article-card-title-no-image{{/unless}}" title="{{title}}">
+          {{!-- Long titles are clamped to three lines in festive.css rather than trimmed by JavaScript --}}
+          <h2 class="m-article-card__title" title="{{title}}">
             {{title}}
           </h2>
         </div>
         <div class="m-article-card__timestamp">
-          <span>{{date published_at timeago="true"}}</span>
-          <span>&bull;</span>
-          <span>{{reading_time minute=(t "Only a minute") minutes=(t "Takes % minutes")}}</span>
+          <span class="np-byline">{{t "By"}} {{primary_author.name}}</span>
+          <span class="np-meta-row">
+            <time datetime="{{date published_at format="YYYY-MM-DD"}}">{{date published_at format="D MMMM YYYY"}}</time>
+            <span aria-hidden="true">&bull;</span>
+            <span>{{reading_time minute=(t "Only a minute") minutes=(t "Takes % minutes")}}</span>
+          </span>
         </div>
       </a>
     </div>

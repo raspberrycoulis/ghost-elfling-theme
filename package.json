@@ -43,6 +43,34 @@
             "disable_fade_animation": {
                 "type": "boolean",
                 "default": false
+            },
+            "adobe_fonts_kit_id": {
+                "type": "text",
+                "default": "cxi0seh"
+            },
+            "snowfall": {
+                "type": "select",
+                "options": ["Everywhere", "Header only", "Off"],
+                "default": "Everywhere"
+            },
+            "festive_decorations": {
+                "type": "boolean",
+                "default": true
+            },
+            "show_christmas_countdown": {
+                "type": "boolean",
+                "default": true,
+                "group": "homepage"
+            },
+            "hero_button_text": {
+                "type": "text",
+                "default": "Check the Nice List",
+                "group": "homepage"
+            },
+            "hero_button_url": {
+                "type": "text",
+                "default": "/the-nice-list/",
+                "group": "homepage"
             }
         }
     },
@@ -72,5 +100,5 @@
         "desktop": "assets/screenshot-desktop.png",
         "mobile": "assets/screenshot-mobile.png"
     },
-    "version": "2.2.7"
+    "version": "3.0.0"
 }

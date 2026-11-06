@@ -19,13 +19,32 @@ into the {body} of the default.hbs template --}}
 {{!-- Special header.hbs partial to generate the <header> tag --}}
 {{> header}}
 
-<main class="l-fullscreen">
-  <section class="l-fullscreen__content" data-animate="fade-up">
-    <h1 class="m-404-title">404</h1>
-    <p class="m-404-subtitle">{{t "Page not found"}}</p>
-    <p class="m-404-text">
-      {{t "Unfortunately the page you were looking for could not be found."}}
+<main class="l-fullscreen np-404">
+  <section class="l-fullscreen__content np-404__content" data-animate="fade-up">
+    {{!-- A puzzled snowman, drawn inline so the page needs no extra requests --}}
+    <svg class="np-404__snowman" viewBox="0 0 160 190" width="160" height="190" aria-hidden="true" focusable="false">
+      <ellipse cx="80" cy="182" rx="62" ry="7" class="np-404__ground"/>
+      <circle cx="80" cy="140" r="42" fill="#fff" stroke="#cdbf9f" stroke-width="2"/>
+      <circle cx="80" cy="82" r="31" fill="#fff" stroke="#cdbf9f" stroke-width="2"/>
+      <circle cx="80" cy="128" r="3.5" fill="#26332e"/><circle cx="80" cy="145" r="3.5" fill="#26332e"/><circle cx="80" cy="162" r="3.5" fill="#26332e"/>
+      <path d="M51 98c10 7 48 7 58 0l-2 9c-6 4-46 4-54 0z" fill="#d41616"/><path d="M95 100l6 26-9 1-4-24z" fill="#b81313"/>
+      <circle cx="70" cy="76" r="3.2" fill="#26332e"/><circle cx="90" cy="76" r="3.2" fill="#26332e"/>
+      <path d="M80 82l17 5-17 3z" fill="#f08a24"/>
+      <path d="M70 93q10 -4 20 0" fill="none" stroke="#26332e" stroke-width="2.4" stroke-linecap="round"/>
+      <path d="M38 132 14 116M122 132l22-18" stroke="#7a4b12" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M60 54h40l-4-26H64z" fill="#173f35"/><rect x="54" y="52" width="52" height="7" rx="2" fill="#173f35"/><rect x="64" y="46" width="32" height="5" fill="#d41616"/>
+      <text x="120" y="66" font-family="Georgia, serif" font-size="24" class="np-404__question">?</text>
+    </svg>
+    <p class="np-404__code">{{t "Error 404"}}</p>
+    <h1 class="np-404__title">{{t "Oops! This page got lost in the snow"}}</h1>
+    <p class="np-404__text">
+      {{t "Even Rudolph couldn't find it. The page may have moved, or the link might not be quite right."}}
     </p>
-    <a href="{{@site.url}}" class="m-button outlined">{{t "Go to the home page"}}</a>
+    <div class="np-hero-actions np-404__actions">
+      <a href="{{@site.url}}" class="np-button np-button--primary">{{t "Back to the latest stories"}}</a>
+      {{#if @custom.hero_button_url}}
+        <a href="{{@custom.hero_button_url}}" class="np-button np-button--secondary np-button--outline">{{#if @custom.hero_button_text}}{{@custom.hero_button_text}}{{else}}{{t "Check the Nice List"}}{{/if}}</a>
+      {{/if}}
+    </div>
   </section>
 </main>

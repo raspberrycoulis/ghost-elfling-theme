@@ -1,0 +1,47 @@
+{{!--
+"Meet the North Pole team": the character authors, most prolific first.
+Shown at the foot of the homepage (page 1 only), just above the footer village.
+--}}
+{{#get "authors" limit="8" include="count.posts" order="count.posts desc" as |team|}}
+  {{#if team}}
+    <section class="np-team" aria-labelledby="np-team-title">
+      <div class="l-wrapper">
+        <div class="np-section-heading">
+          <h2 class="np-section-heading__title" id="np-team-title">{{t "Meet the North Pole team"}}</h2>
+          {{#if @custom.festive_decorations}}
+            <svg class="np-holly" viewBox="0 0 120 28" width="120" height="28" aria-hidden="true" focusable="false">
+              <path class="np-holly__leaf" d="M58 14c-6-9-16-12-26-10 3 3 2 6-1 7 3 2 3 5 0 7 10 3 21 1 27-4z"/>
+              <path class="np-holly__leaf" d="M62 14c6-9 16-12 26-10-3 3-2 6 1 7-3 2-3 5 0 7-10 3-21 1-27-4z"/>
+              <circle class="np-holly__berry" cx="56" cy="17" r="4"/>
+              <circle class="np-holly__berry" cx="64" cy="17" r="4"/>
+              <circle class="np-holly__berry" cx="60" cy="11" r="4"/>
+              <path class="np-holly__rule" d="M0 14h24M96 14h24"/>
+            </svg>
+          {{/if}}
+        </div>
+        <ul class="np-team__list">
+          {{#foreach team}}
+            {{#if count.posts}}
+              <li class="np-team__member">
+                <a href="{{url}}" class="np-team__link">
+                  <span class="np-team__avatar">
+                    {{#if profile_image}}
+                      <img src="{{img_url profile_image size="s" format="webp"}}" alt="" loading="lazy" width="96" height="96">
+                    {{else}}
+                      <img src="{{asset "images/default-avatar-square-normal.jpg"}}" alt="" loading="lazy" width="96" height="96">
+                    {{/if}}
+                  </span>
+                  <span class="np-team__name">{{name}}</span>
+                  <span class="np-team__count">{{plural count.posts empty=(t "No stories yet") singular=(t "1 story") plural=(t "% stories")}}</span>
+                  {{#if bio}}
+                    <span class="np-team__bio">{{bio}}</span>
+                  {{/if}}
+                </a>
+              </li>
+            {{/if}}
+          {{/foreach}}
+        </ul>
+      </div>
+    </section>
+  {{/if}}
+{{/get}}

@@ -70,10 +70,20 @@
       }
     </style>
 
+    {{!-- Adobe Fonts kit (archer-pro and p22-festiva). Set the kit ID in Design > Theme settings.
+    If it is left empty, the theme falls back to Source Sans Pro and Georgia. --}}
+    {{#if @custom.adobe_fonts_kit_id}}
+      <link rel="preconnect" href="https://use.typekit.net" crossorigin />
+      <link rel="stylesheet" href="https://use.typekit.net/{{@custom.adobe_fonts_kit_id}}.css" />
+    {{/if}}
+
     <link rel="stylesheet" type="text/css" href="{{asset "css/app.css"}}" media="screen" />
 
     {{!-- This #block helper will inject a stylesheet for a specific page --}}
     {{{block "styles"}}}
+
+    {{!-- Festive layer: palette, typography and decorations. Loaded after the page styles so it can refine them. --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/festive.css"}}" media="screen" />
 
     {{!-- This #block helper will pull data from the hero partial 
     to inject styles of the hero image to make it responsive --}}
@@ -89,15 +99,16 @@
       }
     </style>
 
-    {{!-- These variables are used to make the search form work --}}
-    <script>
+    {{!-- These variables are used to make the search form work.
+    data-cfasync="false" stops Cloudflare Rocket Loader from delaying inline scripts the theme relies on. --}}
+    <script data-cfasync="false">
       // @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
       const ghostHost = "{{@site.url}}"
       // @license-end
     </script>
 
     {{#if @custom.search_api_key}}
-      <script>
+      <script data-cfasync="false">
         const ghostSearchApiKey = "{{@custom.search_api_key}}"
       </script>
     {{/if}}
@@ -111,20 +122,24 @@
       </style>
     {{/if}}
 
-    {{!-- This script sets the correct theme mode (light or dark) --}}
-    <script>
-      if (typeof Storage !== 'undefined') {
-        const currentSavedTheme = localStorage.getItem('theme')
-
-        if (currentSavedTheme && currentSavedTheme === 'dark') {
-          document.documentElement.setAttribute('data-theme', 'dark')
-        } else {
-          document.documentElement.setAttribute('data-theme', 'light')
-        }
-      }
+    {{!-- This script sets the correct theme mode (light or dark).
+    A visitor's saved choice wins; otherwise we follow their device setting. --}}
+    <script data-cfasync="false">
+      (function () {
+        var theme = 'light'
+        try {
+          var saved = localStorage.getItem('theme')
+          if (saved === 'dark' || saved === 'light') {
+            theme = saved
+          } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            theme = 'dark'
+          }
+        } catch (e) {}
+        document.documentElement.setAttribute('data-theme', theme)
+      })()
     </script>
   </head>
-  <body class="{{body_class}}">
+  <body class="{{body_class}}{{#if @custom.festive_decorations}} has-festive-decorations{{/if}}">
     {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
     {{{body}}}
 
@@ -139,8 +154,15 @@
     <script defer src="{{asset "js/vendor.js"}}"></script>
     <script defer src="{{asset "js/app.js"}}"></script>
 
-    {{!-- Snow effect --}}
-    <script defer src="{{asset "js/snowstorm.min.js"}}"></script>
+    {{!-- Snow effect. The mode comes from Design > Theme settings; festive.js applies it,
+    respects reduced-motion preferences and powers the visitor's snow switch. --}}
+    <script data-cfasync="false">
+      window.elflingSnowMode = "{{#match @custom.snowfall "Off"}}off{{else}}{{#match @custom.snowfall "Header only"}}header{{else}}everywhere{{/match}}{{/match}}"
+    </script>
+    {{#match @custom.snowfall "!=" "Off"}}
+      <script defer src="{{asset "js/snowstorm.min.js"}}"></script>
+    {{/match}}
+    <script defer src="{{asset "js/festive.js"}}"></script>
 
     {{!-- The #block helper will pull in data from the #contentFor other template files --}}
     {{{block "scripts"}}}

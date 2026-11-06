@@ -16,6 +16,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Validate theme with gscan
+        # Ghost's official theme checker: stops the release if the theme has errors
+        run: npx --yes gscan@latest . --fatal --verbose
+
       - name: Build ZIP with tag-based filename
         run: |
           VERSION="${{ github.ref_name }}"
