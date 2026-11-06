@@ -5,41 +5,34 @@ on:
     tags:
       - 'v*'
 
+permissions:
+  contents: write
+
 jobs:
   create-release:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Build zip
+      - name: Build ZIP with tag-based filename
         run: |
+          VERSION="${{ github.ref_name }}"
           mkdir -p build
-          zip -r build/project.zip . \
+          zip -r "build/elfling-${VERSION}.zip" . \
+            -x "build/*" \
             -x ".git/*" \
             -x ".github/*" \
             -x ".gitignore"
 
       - name: Create GitHub Release
-        id: create_release
-        uses: actions/create-release@v1
+        uses: softprops/action-gh-release@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref_name }}
-          release_name: ${{ github.ref_name }}
-          body: |
-            Automated release for tag ${{ github.ref_name }}.
-          draft: false
-          prerelease: false
-
-      - name: Upload Zip Asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: build/project.zip
-          asset_name: project.zip
-          asset_content_type: application/zip
+          name: ${{ github.ref_name }}
+          body: Automated release for tag ${{ github.ref_name }}.
+          files: |
+            build/elfling-${{ github.ref_name }}.zip
