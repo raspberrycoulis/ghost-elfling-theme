@@ -1943,13 +1943,37 @@ a[href*="/author/"] {
 }
 
 .np-mailbag .m-subscribe-section__content {
+  display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
-@media only screen and (min-width: 48rem) {
+/* Phones: a smaller stamp, and room beneath it so it never sits on the heading */
+@media only screen and (max-width: 47.99rem) {
   .np-mailbag__envelope {
-    padding: 44px 48px 40px;
+    padding: 66px 22px 30px;
+  }
+
+  .np-mailbag__stamp {
+    top: -18px;
+    right: 16px;
+    width: 58px;
+    height: 68px;
+    outline-width: 4px;
+    font-size: .48rem;
+    letter-spacing: .02em;
+  }
+
+  .np-mailbag__stamp svg {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+@media only screen and (min-width: 48rem) {
+  /* Extra top padding so the stamp sits clear of the email field */
+  .np-mailbag__envelope {
+    padding: 76px 48px 56px;
   }
 
   .np-mailbag .m-subscribe-section__content {
