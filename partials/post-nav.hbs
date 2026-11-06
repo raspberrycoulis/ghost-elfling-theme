@@ -1,0 +1,32 @@
+{{!--
+Previous (older) and next (newer) story links at the end of a post.
+Use inside a post context. An empty slot keeps the layout balanced at either end of the archive.
+--}}
+<nav class="np-post-nav" aria-label="{{t "More stories"}}">
+  {{#prev_post}}
+    <a href="{{url}}" class="np-post-nav__link np-post-nav__link--prev">
+      {{#if feature_image}}
+        <img class="np-post-nav__image" src="{{img_url feature_image size="s" format="webp"}}" alt="" loading="lazy" width="96" height="96">
+      {{/if}}
+      <span class="np-post-nav__text">
+        <span class="np-post-nav__label"><span aria-hidden="true">&larr;</span> {{t "Previous story"}}</span>
+        <span class="np-post-nav__title">{{title}}</span>
+      </span>
+    </a>
+  {{else}}
+    <span class="np-post-nav__spacer"></span>
+  {{/prev_post}}
+  {{#next_post}}
+    <a href="{{url}}" class="np-post-nav__link np-post-nav__link--next">
+      <span class="np-post-nav__text">
+        <span class="np-post-nav__label">{{t "Next story"}} <span aria-hidden="true">&rarr;</span></span>
+        <span class="np-post-nav__title">{{title}}</span>
+      </span>
+      {{#if feature_image}}
+        <img class="np-post-nav__image" src="{{img_url feature_image size="s" format="webp"}}" alt="" loading="lazy" width="96" height="96">
+      {{/if}}
+    </a>
+  {{else}}
+    <span class="np-post-nav__spacer"></span>
+  {{/next_post}}
+</nav>

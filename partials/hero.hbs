@@ -1,10 +1,11 @@
 {{!--
 If the template in question has a background image, then we render responsive image styles
 for it, and apply those styles to the <header> tag.
+The closing </section> lives in each template that uses this partial.
 --}}
 
 {{#if background}}
-  <section class="m-hero with-picture" data-animate="fade">
+  <section class="m-hero with-picture js-hero" data-animate="fade">
     <div class="m-hero__picture {{#is "post"}}in-post{{/is}}">
       <img
         srcset="
@@ -19,5 +20,12 @@ for it, and apply those styles to the <header> tag.
       />
     </div>
 {{else}}
-  <section class="m-hero no-picture {{#is "post"}}in-post{{/is}}" data-animate="fade">
+  <section class="m-hero no-picture {{#is "post"}}in-post{{/is}} js-hero" data-animate="fade">
+{{/if}}
+{{#if @custom.festive_decorations}}
+  {{!-- Decorative only: a string of fairy lights along the top and a snowdrift along the bottom --}}
+  <div class="np-lights" aria-hidden="true"></div>
+  <svg class="np-snow-edge" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+    <path fill="currentColor" d="M0 46c48-10 96-22 158-18 70 4 104 26 176 26s110-30 186-32c78-2 116 24 190 26 70 2 110-22 180-24 74-2 120 22 192 22 62 0 104-16 158-20 76-6 128 8 200 14V80H0z"/>
+  </svg>
 {{/if}}

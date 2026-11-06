@@ -1,0 +1,42 @@
+{{!--
+Share buttons with clearly labelled, brand-coloured icons.
+Use inside a post or page context. Pass label="..." to change the heading.
+Links open the platform's own share screen; nothing is loaded from third parties until clicked.
+--}}
+<section class="np-share" aria-labelledby="np-share-title-{{id}}">
+  <h2 class="np-share__title" id="np-share-title-{{id}}">{{#if label}}{{label}}{{else}}{{t "Share this story"}}{{/if}}</h2>
+  <ul class="np-share__list">
+    <li>
+      <a class="np-share__button" href="https://wa.me/?text={{encode title}}%20{{url absolute="true"}}" target="_blank" rel="noopener" data-umami-event="share-whatsapp">
+        <svg class="np-share__icon" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="16" fill="#25D366"/><path d="M16 7.2a8.8 8.8 0 0 0-7.6 13.3L7.3 24.8l4.4-1.1A8.8 8.8 0 1 0 16 7.2z" fill="none" stroke="#fff" stroke-width="1.9" stroke-linejoin="round"/><path d="M12.6 11.8c.3-.6.7-.6 1-.6h.6c.2 0 .4.1.5.4l.8 1.9c.1.2 0 .5-.1.7l-.6.7c-.1.2-.1.4 0 .6.4.8 1 1.5 1.7 2.1.6.5 1.2.8 1.9 1.1.2.1.4 0 .6-.1l.8-.9c.2-.2.4-.2.6-.1l1.8.9c.2.1.4.3.4.5 0 .5-.2 1.2-.7 1.6-.6.5-1.5.8-2.5.5-1.4-.4-2.7-1.2-3.9-2.3-1.1-1-2-2.3-2.4-3.6-.4-1.3 0-2.6.5-3.3z" fill="#fff"/></svg>
+        <span>WhatsApp</span>
+      </a>
+    </li>
+    <li>
+      <a class="np-share__button" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" target="_blank" rel="noopener" data-umami-event="share-facebook">
+        <svg class="np-share__icon" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="16" fill="#1877F2"/><path d="M17.6 25.5v-7.6h2.6l.4-3h-3v-1.9c0-.9.3-1.5 1.5-1.5h1.6V8.8c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2h-2.6v3h2.6v7.6z" fill="#fff"/></svg>
+        <span>Facebook</span>
+      </a>
+    </li>
+    <li>
+      <a class="np-share__button" href="mailto:?subject={{encode title}}&amp;body={{url absolute="true"}}" data-umami-event="share-email">
+        <svg class="np-share__icon" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="16" fill="#173f35"/><rect x="8.5" y="10.5" width="15" height="11" rx="1.5" fill="none" stroke="#fff" stroke-width="1.8"/><path d="m9 11.5 7 5.5 7-5.5" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        <span>{{t "Email"}}</span>
+      </a>
+    </li>
+    <li>
+      <button class="np-share__button js-share-copy" type="button" data-url="{{url absolute="true"}}" data-umami-event="share-copy-link">
+        <svg class="np-share__icon" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="16" fill="#d41616"/><path d="M14.6 17.4a3.2 3.2 0 0 0 4.6 0l3-3a3.2 3.2 0 0 0-4.6-4.6l-1 1M17.4 14.6a3.2 3.2 0 0 0-4.6 0l-3 3a3.2 3.2 0 0 0 4.6 4.6l1-1" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round"/></svg>
+        <span class="js-share-copy-label">{{t "Copy link"}}</span>
+      </button>
+    </li>
+    {{!-- Shown by festive.js only on devices with a built-in share sheet (most phones) --}}
+    <li class="np-share__native" hidden>
+      <button class="np-share__button js-share-native" type="button" data-url="{{url absolute="true"}}" data-title="{{title}}" data-umami-event="share-native">
+        <svg class="np-share__icon" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="16" fill="#c49a52"/><path d="M16 8.5v10M12.2 12.3 16 8.5l3.8 3.8M10.5 16.5v6h11v-6" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>{{t "More ways to share"}}</span>
+      </button>
+    </li>
+  </ul>
+  <p class="np-share__status js-share-status" role="status" aria-live="polite"></p>
+</section>

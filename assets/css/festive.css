@@ -1,0 +1,2109 @@
+/* ==========================================================================
+   Elfling festive layer
+   --------------------------------------------------------------------------
+   Loaded after app.css and the page stylesheets. Readable, unminified CSS,
+   so it can be edited without a build step.
+
+   Replaces the styles that previously lived in Ghost's site-wide code
+   injection. Once this theme is active, that code injection can be cleared
+   (keep the analytics script there).
+
+   Contents
+   01. Tokens (palette, fonts)
+   02. Light theme ("Christmas morning")
+   03. Dark theme ("Christmas Eve")
+   04. Base typography
+   05. Header and navigation
+   06. Hero / masthead
+   07. Festive decorations (lights, snowdrift, holly)
+   08. Section headings
+   09. Featured slider
+   10. Article cards
+   11. Pagination
+   12. Footer
+   13. Posts and pages
+   14. Subscribe section and upgrade CTA
+   15. Author pages
+   16. Mobile menu
+   17. Motion preferences
+   ========================================================================== */
+
+/* 01. Tokens
+   ========================================================================== */
+
+:root {
+  /* Signature red stays the lead colour */
+  --np-red: #d41616;
+  --np-red-deep: #a80f12;
+  --np-red-soft: #fb4242;
+
+  /* Supporting palette */
+  --np-evergreen: #173f35;
+  --np-evergreen-mid: #215444;
+  --np-cream: #faf5ea;
+  --np-paper: #fffdf8;
+  --np-gold: #c49a52;
+  --np-gold-light: #e8d3a6;
+  --np-ink: #26332e;
+  --np-ink-soft: #56625d;
+  --np-snow: #ffffff;
+
+  /* Fonts come from the Adobe Fonts kit, with sensible fallbacks.
+     A font chosen in Ghost admin (Design > Brand > Typography) takes priority. */
+  --np-font-display: var(--gh-font-heading, p22-festiva, Georgia, 'Times New Roman', serif);
+  --np-font-body: var(--gh-font-body, archer-pro, 'Source Sans Pro', Georgia, serif);
+
+  --np-radius: 14px;
+  --np-ease: cubic-bezier(.02, .01, .47, 1);
+}
+
+/* 02. Light theme ("Christmas morning")
+   ========================================================================== */
+
+[data-theme=light] {
+  --background-color: var(--np-cream);
+  --primary-foreground-color: var(--np-ink);
+  --secondary-foreground-color: #18221e;
+  --secondary-subtle-color: #f3ead6;
+  --titles-color: var(--np-ink);
+  --link-color: var(--np-red);
+  --primary-border-color: #cdbf9f;
+  --secondary-border-color: #eadfc8;
+  --article-shadow-normal: 0 6px 18px rgba(38, 51, 46, .08);
+  --article-shadow-hover: 0 16px 36px rgba(38, 51, 46, .16);
+  --transparent-background-color: rgba(250, 245, 234, .99);
+  --footer-background-color: var(--np-evergreen);
+  --header-menu-gradient-second-color: var(--np-red);
+  --table-background-color-odd: #f6efdf;
+
+  --np-surface: var(--np-paper);
+  --np-surface-border: #ecdfc3;
+  --np-heading: var(--np-red);
+  --np-meta: var(--np-ink-soft);
+  --np-byline: var(--np-evergreen);
+  --np-tag-bg: rgba(23, 63, 53, .08);
+  --np-tag-text: var(--np-evergreen);
+  /* Kept close to the signature red so the shimmer never drifts towards salmon */
+  --np-header-from: #dc2121;
+  --np-header-via: var(--np-red);
+  --np-header-to: #b81313;
+  --np-footer-bg: var(--np-evergreen);
+  --np-menu-bg: var(--np-evergreen);
+  --np-selection-bg: var(--np-red);
+  --np-selection-text: #ffffff;
+}
+
+/* 03. Dark theme ("Christmas Eve"): deep evergreen night, warm cream text, gold accents
+   ========================================================================== */
+
+[data-theme=dark] {
+  --background-color: #0e1d18;
+  --primary-foreground-color: #e9e0cc;
+  --secondary-foreground-color: #fbf6ea;
+  --secondary-subtle-color: #13261f;
+  --titles-color: #f3ead8;
+  --link-color: #f0c674;
+  --primary-border-color: #2c4a3e;
+  --secondary-border-color: #1c3329;
+  --article-shadow-normal: 0 6px 18px rgba(0, 0, 0, .25);
+  --article-shadow-hover: 0 16px 36px rgba(0, 0, 0, .4);
+  --transparent-background-color: rgba(14, 29, 24, .99);
+  --footer-background-color: #163a30;
+  --header-menu-gradient-first-color: rgba(168, 15, 18, 0);
+  --header-menu-gradient-second-color: var(--np-red-deep);
+  --table-background-color-odd: #132620;
+
+  --np-surface: #152a23;
+  --np-surface-border: rgba(196, 154, 82, .28);
+  --np-heading: #f3ead8;
+  --np-meta: #bfb59f;
+  --np-byline: var(--np-gold-light);
+  --np-tag-bg: rgba(232, 211, 166, .12);
+  --np-tag-text: var(--np-gold-light);
+  --np-header-from: #b81919;
+  --np-header-via: #a81414;
+  --np-header-to: #8f0f12;
+  /* A step lighter than the night page so the village silhouette reads clearly */
+  --np-footer-bg: #163a30;
+  --np-menu-bg: #10261f;
+  --np-selection-bg: var(--np-gold);
+  --np-selection-text: #10201a;
+}
+
+/* 04. Base typography
+   ========================================================================== */
+
+body {
+  font-family: var(--np-font-body);
+  background-color: var(--background-color);
+}
+
+/* A very faint paper grain in light mode, for the newspaper feel */
+[data-theme=light] body.has-festive-decorations {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.35 0 0 0 0 0.2 0 0 0 .06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+::selection {
+  background: var(--np-selection-bg);
+  color: var(--np-selection-text);
+}
+
+/* Animated underline on navigation and footer links (previously applied to every link) */
+.m-nav__left li:not(.np-nav-support) a,
+.m-secondary-menu a,
+.m-footer a {
+  position: relative;
+}
+
+.m-nav__left li:not(.np-nav-support) a::before,
+.m-secondary-menu a::before,
+.m-footer a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 3px;
+  border-radius: 3px;
+  background-color: var(--np-gold);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .3s ease-in-out;
+}
+
+.m-nav__left li:not(.np-nav-support) a:hover::before,
+.m-secondary-menu a:hover::before,
+.m-footer a:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.m-nav__left li.more a::before,
+.m-recent-article::before {
+  display: none;
+}
+
+/* 05. Header and navigation
+   ========================================================================== */
+
+/* The header is always red now, not only on pages with a cover image */
+.m-header,
+.m-header.with-picture,
+.m-header.submenu-is-active {
+  background: linear-gradient(-45deg, var(--np-header-from), var(--np-header-via), var(--np-header-to), var(--np-header-to));
+  background-size: 400% 400%;
+  animation: np-gradient 15s ease infinite;
+}
+
+@keyframes np-gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.m-nav__left li,
+.m-nav__left li.nav-current,
+.m-site-name.in-desktop-menu,
+.m-site-name.in-mobile-topbar,
+.m-header .m-icon-button,
+.m-header .m-icon-button.in-mobile-topbar {
+  color: #ffffff;
+}
+
+.m-nav__left li a {
+  font-family: var(--np-font-body);
+  font-weight: 500;
+}
+
+.m-nav__left li.nav-current a::before {
+  transform: scaleX(1);
+}
+
+.m-site-name.in-desktop-menu,
+.m-site-name.in-mobile-topbar {
+  font-family: var(--np-font-display);
+  font-weight: 400;
+  font-size: 1.25rem;
+}
+
+/* Hide the fade-out gradient at the right of the menu and the "More" link (as before) */
+.m-nav__right::before {
+  display: none;
+}
+
+.more {
+  display: none;
+}
+
+/* Support us: one clear festive button instead of an icon and a separate link */
+.np-support-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 14px 4px 10px;
+  border: 1.5px solid rgba(255, 255, 255, .85);
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, .12);
+  font-weight: 700 !important;
+  line-height: 1.4;
+  transition: background-color .2s ease, color .2s ease;
+}
+
+.np-support-button:hover,
+.np-support-button:focus-visible {
+  background-color: #ffffff;
+  color: var(--np-red);
+}
+
+/* Navigation icons (partials/icons): one set of white line icons instead of emoji */
+.np-nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.np-nav-icon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.np-nav-icon__detail {
+  stroke-width: 1.3;
+}
+
+.np-support-button .np-nav-icon {
+  width: 19px;
+  height: 19px;
+}
+
+/* Dark mode switch. On mobile it floats at the bottom right of the page,
+   so it gets a solid evergreen button; on desktop it sits in the red header. */
+.m-toggle-darkmode {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, .25);
+}
+
+.m-toggle-darkmode div {
+  background-color: var(--np-evergreen);
+}
+
+.m-toggle-darkmode span {
+  color: #ffffff;
+}
+
+@media only screen and (min-width: 48rem) {
+  .m-toggle-darkmode {
+    box-shadow: none;
+  }
+
+  .m-toggle-darkmode div {
+    background-color: rgba(255, 255, 255, .16);
+  }
+}
+
+.np-snow-toggle {
+  margin-left: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, .16) !important;
+  width: 28px;
+  height: 28px;
+}
+
+.np-snow-toggle.is-off {
+  opacity: .55;
+}
+
+.np-snow-toggle.is-off svg {
+  transform: rotate(45deg) scale(.9);
+}
+
+.np-snow-toggle svg {
+  transition: transform .3s ease;
+}
+
+/* Submenu ("•••") */
+.m-submenu,
+.m-submenu.opened {
+  background-color: var(--np-menu-bg);
+  border-top-color: rgba(196, 154, 82, .4);
+}
+
+.m-submenu-title.in-recent-articles {
+  font-family: var(--np-font-display);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.m-recent-article__title,
+.m-recent-article__date {
+  color: #ffffff;
+}
+
+.m-recent-article__date {
+  opacity: .8;
+}
+
+/* 06. Hero / masthead
+   ========================================================================== */
+
+/* Darken the centre slightly so the title and buttons stay readable on any cover image */
+.m-hero.with-picture .m-hero__picture::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(8, 20, 16, .55) 0%, rgba(8, 20, 16, .25) 55%, rgba(8, 20, 16, .1) 100%);
+  pointer-events: none;
+}
+
+.m-hero__picture.in-post::after {
+  display: none;
+}
+
+/* Candy-cane title (moved from code injection) */
+.m-hero.with-picture .m-hero-title {
+  --np-stripe-a: var(--np-red-soft);
+  --np-stripe-b: #ffffff;
+  font-family: var(--np-font-display);
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  font-size: clamp(2.5rem, 7vw, 4.25rem);
+  line-height: 1.1;
+  background: repeating-linear-gradient(45deg, var(--np-stripe-a), var(--np-stripe-a) 30px, var(--np-stripe-b) 30px, var(--np-stripe-b) 60px);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: np-candy-cane 40s linear infinite;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .35));
+}
+
+[data-theme=dark] .m-hero.with-picture .m-hero-title {
+  --np-stripe-a: #e33b3b;
+  --np-stripe-b: #fbf6ea;
+}
+
+@keyframes np-candy-cane {
+  from { background-position: 0; }
+  to { background-position: 1000px; }
+}
+
+.m-hero-description,
+.m-hero-description.bigger,
+.m-hero-stats {
+  font-family: var(--np-font-body);
+  font-weight: 500;
+  font-style: normal;
+}
+
+.m-hero.with-picture .m-hero-description {
+  text-shadow: 0 1px 8px rgba(0, 0, 0, .5);
+}
+
+/* "X sleeps until Christmas" */
+.np-countdown {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 18px;
+  padding: 7px 16px;
+  border: 1.5px solid var(--np-gold);
+  border-radius: 999px;
+  background-color: rgba(23, 63, 53, .88);
+  color: #fbf6ea;
+  font-family: var(--np-font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: .02em;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .25);
+}
+
+.np-countdown[hidden] {
+  display: none;
+}
+
+.np-countdown__icon {
+  font-size: 1.1em;
+  line-height: 1;
+}
+
+/* Buttons under the introduction */
+.np-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.np-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-family: var(--np-font-body);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: .01em;
+  text-decoration: none;
+  transition: transform .2s var(--np-ease), box-shadow .2s var(--np-ease), background-color .2s ease, color .2s ease;
+}
+
+.np-button:hover,
+.np-button:focus-visible {
+  transform: translateY(-2px);
+}
+
+.np-button:focus-visible {
+  outline: 3px solid var(--np-gold-light);
+  outline-offset: 3px;
+}
+
+.np-button--primary {
+  background-color: var(--np-red);
+  color: #ffffff;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, .9) inset, 0 6px 16px rgba(0, 0, 0, .3);
+}
+
+.np-button--primary:hover {
+  background-color: var(--np-red-deep);
+}
+
+.np-button--secondary {
+  background-color: rgba(250, 245, 234, .95);
+  color: var(--np-evergreen);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .25);
+}
+
+.np-button--secondary:hover {
+  background-color: #ffffff;
+}
+
+/* 07. Festive decorations
+   ========================================================================== */
+
+/* A string of fairy lights just under the header */
+.np-lights {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  height: 34px;
+  z-index: 3;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='34' viewBox='0 0 160 34'%3E%3Cpath d='M0 4Q40 20 80 4Q120 20 160 4' fill='none' stroke='%23163a2e' stroke-width='1.6'/%3E%3Cg%3E%3Crect x='18' y='9' width='4' height='4' rx='1' fill='%23163a2e'/%3E%3Cellipse cx='20' cy='18' rx='4' ry='6' fill='%23ff4d4d'/%3E%3Crect x='58' y='9' width='4' height='4' rx='1' fill='%23163a2e'/%3E%3Cellipse cx='60' cy='18' rx='4' ry='6' fill='%23ffd166'/%3E%3Crect x='98' y='9' width='4' height='4' rx='1' fill='%23163a2e'/%3E%3Cellipse cx='100' cy='18' rx='4' ry='6' fill='%2349c47a'/%3E%3Crect x='138' y='9' width='4' height='4' rx='1' fill='%23163a2e'/%3E%3Cellipse cx='140' cy='18' rx='4' ry='6' fill='%2366b8ff'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: center top;
+}
+
+/* A soft glow behind every other bulb, gently twinkling */
+.np-lights::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='34' viewBox='0 0 160 34'%3E%3Cdefs%3E%3CradialGradient id='g'%3E%3Cstop offset='0' stop-color='%23fff6d6' stop-opacity='.95'/%3E%3Cstop offset='1' stop-color='%23fff6d6' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='20' cy='18' r='11' fill='url(%23g)'/%3E%3Ccircle cx='100' cy='18' r='11' fill='url(%23g)'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: center top;
+  mix-blend-mode: screen;
+  animation: np-twinkle 2.6s ease-in-out infinite alternate;
+}
+
+@keyframes np-twinkle {
+  from { opacity: .15; }
+  to { opacity: .9; }
+}
+
+@media only screen and (min-width: 48rem) {
+  .np-lights {
+    top: 67px;
+  }
+}
+
+/* Snowdrift along the bottom of the hero, in the page colour */
+.np-snow-edge {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 46px;
+  z-index: 2;
+  color: var(--background-color);
+  pointer-events: none;
+  filter: drop-shadow(0 -3px 4px rgba(0, 0, 0, .12));
+}
+
+@media only screen and (min-width: 48rem) {
+  .np-snow-edge {
+    height: 70px;
+  }
+}
+
+/* Holly divider */
+.np-holly__leaf {
+  fill: var(--np-evergreen-mid);
+}
+
+.np-holly__berry {
+  fill: var(--np-red);
+}
+
+.np-holly__rule {
+  stroke: var(--np-gold);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+
+[data-theme=dark] .np-holly__leaf {
+  fill: #3d8a6a;
+}
+
+/* 08. Section headings
+   ========================================================================== */
+
+.np-section-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+  text-align: center;
+  scroll-margin-top: 90px;
+}
+
+.np-section-heading__title {
+  margin: 0 0 6px;
+  font-family: var(--np-font-display);
+  font-weight: 400;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  line-height: 1.15;
+  color: var(--np-heading);
+}
+
+.l-content {
+  padding: 40px 0 0;
+}
+
+@media only screen and (min-width: 48rem) {
+  .l-content {
+    padding: 50px 0 0;
+  }
+}
+
+/* 09. Featured slider
+   ========================================================================== */
+
+.m-featured-slider.swiper {
+  margin-top: 0;
+  border-radius: var(--np-radius);
+  box-shadow: 0 0 0 1px var(--np-surface-border), var(--article-shadow-normal);
+}
+
+.m-featured-slider__list,
+.m-featured-slider__list__item {
+  border-radius: var(--np-radius);
+}
+
+.m-featured-article__title {
+  font-family: var(--np-font-display);
+  font-weight: 400;
+  font-size: clamp(1.75rem, 3.6vw, 3rem);
+  line-height: 1.15;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, .45);
+}
+
+.m-featured-article__picture div {
+  opacity: .78;
+}
+
+.m-featured-article__timestamp {
+  flex-wrap: wrap;
+  row-gap: 4px;
+  font-family: var(--np-font-body);
+  font-weight: 500;
+}
+
+.m-featured-article__timestamp > :nth-child(even) {
+  padding: 0 10px;
+}
+
+.m-featured-article__timestamp .np-byline {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.m-featured-article__author {
+  border-color: var(--np-gold-light);
+}
+
+.m-featured-article__ribbon {
+  background-color: var(--np-red);
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .25);
+}
+
+/* 10. Article cards
+   ========================================================================== */
+
+.m-article-card {
+  height: auto;
+  min-height: 400px;
+  border: 1px solid var(--np-surface-border);
+  border-radius: var(--np-radius);
+  background-color: var(--np-surface);
+}
+
+@media only screen and (min-width: 48rem) {
+  .m-article-card {
+    height: auto;
+    min-height: 430px;
+  }
+}
+
+.m-article-card::before {
+  border-radius: var(--np-radius);
+}
+
+.m-article-card__picture {
+  border-radius: var(--np-radius) var(--np-radius) 0 0;
+}
+
+/* A thin candy-cane ribbon between picture and text */
+.m-article-card__picture::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 5px;
+  z-index: 1;
+  background: repeating-linear-gradient(-45deg, var(--np-red) 0 8px, #ffffff 8px 16px);
+}
+
+.m-article-card.no-picture .m-article-card__picture::after {
+  display: none;
+}
+
+.m-article-card__author div {
+  border-color: var(--np-gold-light);
+}
+
+.m-article-card__featured {
+  background-color: var(--np-paper);
+  color: var(--np-red);
+}
+
+.m-article-card__info,
+.m-article-card.no-picture .m-article-card__info {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding-top: 0;
+  background-color: var(--np-surface);
+  border-radius: 0 0 var(--np-radius) var(--np-radius);
+}
+
+@media only screen and (min-width: 48rem) {
+  .m-article-card__info {
+    padding-top: 0;
+  }
+}
+
+/* Category label: in the flow, above the headline */
+.m-article-card__tag {
+  position: static;
+  align-self: flex-start;
+  margin: 18px 20px 0;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background-color: var(--np-tag-bg);
+  color: var(--np-tag-text);
+  font-family: var(--np-font-body);
+  font-weight: 600;
+  font-size: .75rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 48rem) {
+  .m-article-card__tag {
+    margin: 20px 25px 0;
+  }
+}
+
+.m-article-card__info-link,
+.m-article-card__info.no-tag .m-article-card__info-link {
+  flex: 1;
+  gap: 16px;
+  padding: 12px 20px 20px;
+}
+
+@media only screen and (min-width: 48rem) {
+  .m-article-card__info-link,
+  .m-article-card__info.no-tag .m-article-card__info-link {
+    padding: 12px 25px 24px;
+  }
+}
+
+.m-article-card__info.no-tag .m-article-card__info-link {
+  padding-top: 20px;
+}
+
+/* Readable headline font, clamped to three lines */
+.m-article-card__title,
+.m-article-card.no-picture .m-article-card__title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+  font-family: var(--np-font-body);
+  font-weight: 700;
+  font-size: 1.3rem;
+  line-height: 1.28;
+  letter-spacing: 0;
+  color: var(--titles-color);
+  transition: color .2s ease;
+}
+
+.m-article-card.no-picture .m-article-card__title {
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  font-size: 1.5rem;
+}
+
+.m-article-card:hover .m-article-card__title {
+  color: var(--np-red);
+}
+
+[data-theme=dark] .m-article-card:hover .m-article-card__title {
+  color: var(--np-gold-light);
+}
+
+.m-article-card__timestamp {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  font-family: var(--np-font-body);
+  font-weight: 500;
+  color: var(--np-meta);
+}
+
+.m-article-card__timestamp > span:nth-child(2) {
+  padding: 0;
+}
+
+.np-byline {
+  color: var(--np-byline);
+  font-weight: 700;
+}
+
+.np-meta-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .8125rem;
+}
+
+/* 11. Pagination
+   ========================================================================== */
+
+.m-pagination__text {
+  font-family: var(--np-font-body);
+  font-weight: 500;
+}
+
+.m-pagination .m-icon-button.filled {
+  background-color: var(--np-surface);
+  border: 1px solid var(--np-surface-border);
+  color: var(--np-red);
+}
+
+[data-theme=dark] .m-pagination .m-icon-button.filled {
+  color: var(--np-gold-light);
+}
+
+/* 12. Footer
+   ========================================================================== */
+
+.m-footer {
+  position: relative;
+  margin-top: 90px;
+  background: var(--np-footer-bg);
+  color: #fbf6ea;
+}
+
+/* A snowy village silhouette sits on top of the footer */
+.np-village {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  width: 100%;
+  height: 80px;
+  margin-bottom: -1px;
+  color: var(--np-footer-bg);
+  pointer-events: none;
+}
+
+@media only screen and (min-width: 48rem) {
+  .np-village {
+    height: 110px;
+  }
+}
+
+.np-village__snow {
+  fill: none;
+  stroke: #fbf6ea;
+  stroke-width: 4px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+/* vector-effect is not inherited, so it goes on the shapes themselves */
+.np-village__snow polyline {
+  vector-effect: non-scaling-stroke;
+}
+
+[data-theme=dark] .np-village__snow {
+  stroke: #dfe6e2;
+}
+
+.np-village__window {
+  fill: #ffd479;
+}
+
+.m-footer__content {
+  padding: 30px 20px 40px;
+}
+
+.m-footer__nav-secondary .m-secondary-menu {
+  font-family: var(--np-font-body);
+  font-weight: 500;
+}
+
+.m-footer__nav-secondary .m-secondary-menu a {
+  color: #fbf6ea;
+}
+
+.m-footer-copyright {
+  font-family: var(--np-font-display);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #fbf6ea;
+}
+
+.m-footer-copyright.jslicense,
+.m-footer-social {
+  display: none;
+}
+
+/* 13. Posts and pages
+   ========================================================================== */
+
+.m-heading__title.in-post {
+  font-family: var(--np-font-display);
+  font-weight: 400;
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  line-height: 1.15;
+  color: var(--np-heading);
+}
+
+.m-heading__meta {
+  font-family: var(--np-font-body);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.l-post-content {
+  font-family: var(--np-font-body);
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+
+/* Previously this rule also caught every h3, h4 and h5 on the site */
+.l-post-content h2,
+.l-post-content h3,
+.l-post-content h4,
+.l-post-content h5 {
+  font-family: var(--np-font-display);
+  font-weight: 400;
+}
+
+/* Recommended articles heading at the end of a post */
+.m-section-title {
+  font-family: var(--np-font-display);
+  color: var(--np-heading);
+}
+
+/* 14. Subscribe section and upgrade CTA
+   ========================================================================== */
+
+.m-subscribe-section {
+  background-size: cover;
+  background-position: center;
+}
+
+[data-theme=light] .m-subscribe-section {
+  background-image: url('/content/images/2022/11/post-hero-red-darker.svg');
+}
+
+[data-theme=dark] .m-subscribe-section {
+  background-image: url('/content/images/2022/11/post-hero-green-darker.svg');
+}
+
+/* Form fields and buttons use the readable body font, not the display font */
+.m-subscribe-section__form,
+.m-subscribe-section__form input,
+.m-subscribe-section__form button {
+  font-family: var(--np-font-body);
+}
+
+.m-subscribe-section__title {
+  font-family: var(--np-font-display);
+  font-weight: 400;
+  font-size: 2.5rem;
+  color: #ffffff;
+}
+
+.m-subscribe-section__description {
+  font-family: var(--np-font-body);
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.gh-post-upgrade-cta h2 {
+  font-family: var(--np-font-display);
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+.gh-post-upgrade-cta a.gh-btn,
+.gh-post-upgrade-cta small {
+  font-family: var(--np-font-body);
+  font-weight: 500;
+}
+
+.gh-post-upgrade-cta-content {
+  background: linear-gradient(-45deg, var(--np-red), var(--np-red-soft), #308505, #173305);
+  background-size: 400% 400%;
+  animation: np-gradient 7.5s ease infinite;
+}
+
+[data-theme=dark] .gh-post-upgrade-cta-content {
+  background: linear-gradient(-45deg, #173305, #308505, var(--np-red-soft), var(--np-red));
+  background-size: 400% 400%;
+}
+
+/* 15. Author pages (moved from code injection as they were) */
+
+.m-author {
+  padding: 10px 0;
+  margin: 0 0 50px;
+}
+
+.m-author__name {
+  position: fixed;
+  font-size: 1.5rem;
+  color: var(--np-heading);
+}
+
+.m-author__info {
+  font-family: var(--np-font-display);
+  font-weight: 400;
+}
+
+.m-author__bio {
+  display: none;
+}
+
+/* No underline on links to author pages (relative match, so it also works locally) */
+a[href*="/author/"] {
+  text-decoration: none;
+}
+
+/* 16. Mobile menu
+   ========================================================================== */
+
+.m-mobile-topbar {
+  font-family: var(--np-font-display);
+  font-weight: 400;
+}
+
+.m-menu.opened {
+  background-color: var(--np-menu-bg);
+}
+
+[data-theme=dark] .l-wrapper {
+  color: var(--primary-foreground-color);
+}
+
+@media only screen and (max-width: 47.99rem) {
+  .np-support-button {
+    margin-top: 6px;
+  }
+}
+
+/* 17. Motion preferences
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .m-header,
+  .m-header.with-picture,
+  .m-header.submenu-is-active,
+  .m-hero.with-picture .m-hero-title,
+  .gh-post-upgrade-cta-content,
+  .np-lights::after {
+    animation: none !important;
+  }
+
+  .np-lights::after {
+    opacity: .6;
+  }
+
+  .m-article-card,
+  .m-article-card:hover,
+  .m-featured-slider.swiper:hover,
+  .np-button:hover {
+    transform: none !important;
+  }
+}
+
+/* 18. Pages with the title and feature image hidden
+   Keeps the content clear of the fixed header when there is no hero.
+   ========================================================================== */
+
+.np-page-no-hero {
+  padding-top: 50px;
+}
+
+@media only screen and (min-width: 48rem) {
+  .np-page-no-hero {
+    padding-top: 67px;
+  }
+}
+
+/* 19. Meet the North Pole team (homepage, page 1)
+   ========================================================================== */
+
+.np-team {
+  padding: 30px 0 20px;
+}
+
+.np-team__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media only screen and (min-width: 64rem) {
+  .np-team__list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
+
+.np-team__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding: 22px 16px 20px;
+  border: 1px solid var(--np-surface-border);
+  border-radius: var(--np-radius);
+  background-color: var(--np-surface);
+  box-shadow: var(--article-shadow-normal);
+  text-align: center;
+  text-decoration: none;
+  transition: transform .25s var(--np-ease), box-shadow .25s var(--np-ease);
+}
+
+.np-team__link:hover,
+.np-team__link:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: var(--article-shadow-hover);
+}
+
+.np-team__avatar {
+  display: block;
+  width: 88px;
+  height: 88px;
+  margin-bottom: 12px;
+  padding: 3px;
+  border-radius: 50%;
+  background: repeating-linear-gradient(-45deg, var(--np-red) 0 6px, #ffffff 6px 12px);
+}
+
+.np-team__avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 3px solid var(--np-surface);
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: var(--np-surface);
+}
+
+.np-team__name {
+  font-family: var(--np-font-display);
+  font-size: 1.45rem;
+  line-height: 1.15;
+  color: var(--np-heading);
+}
+
+.np-team__count {
+  margin-top: 4px;
+  font-weight: 700;
+  font-size: .8125rem;
+  color: var(--np-byline);
+}
+
+.np-team__bio {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+  margin-top: 10px;
+  font-size: .875rem;
+  line-height: 1.45;
+  color: var(--np-meta);
+}
+
+@media only screen and (max-width: 47.99rem) {
+  .np-team__bio {
+    display: none;
+  }
+}
+
+/* 20. Featured story on mobile: inset like the other cards, not edge to edge
+   ========================================================================== */
+
+@media only screen and (max-width: 47.99rem) {
+  .m-featured-slider.swiper {
+    margin: 0 0 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .np-team__link:hover,
+  .np-team__link:focus-visible {
+    transform: none;
+  }
+}
+
+/* 21. Santa's pick (featured posts)
+   The lead story is the most recent featured post. index.hbs hides it from the grid
+   and reveals the Nice List card in its place, so rows of three stay full.
+   ========================================================================== */
+
+/* Older featured posts that appear in the grid: gold frame and a labelled badge */
+.m-article-card.featured {
+  border-color: var(--np-gold);
+  box-shadow: 0 0 0 2px var(--np-gold);
+}
+
+.np-pick-badge,
+.m-article-card__featured.np-pick-badge {
+  width: auto;
+  height: 26px;
+  gap: 5px;
+  padding: 0 10px 0 8px;
+  border-radius: 999px;
+  background-color: var(--np-red);
+  color: #ffffff;
+  font-family: var(--np-font-body);
+  font-weight: 700;
+  font-size: .75rem;
+  letter-spacing: .02em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .25);
+}
+
+.np-pick-badge .icon-star {
+  font-size: .7rem;
+  color: var(--np-gold-light);
+}
+
+.m-featured-article__ribbon .icon-star {
+  color: var(--np-gold-light);
+}
+
+/* Nice List card: hidden unless the lead story leaves a gap */
+.np-nice-list-card {
+  display: none;
+  border: 2px dashed var(--np-gold);
+  background-color: var(--np-surface);
+  background-image: radial-gradient(circle at 50% 38%, rgba(196, 154, 82, .16), transparent 60%);
+}
+
+.np-nice-list-card::before {
+  display: none;
+}
+
+.np-nice-list-card__link {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 30px 26px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.np-nice-list-card__star {
+  fill: var(--np-gold);
+  stroke: var(--np-red-deep);
+  stroke-width: 1;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 4px 10px rgba(196, 154, 82, .45));
+}
+
+.np-nice-list-card__title {
+  font-family: var(--np-font-display);
+  font-size: 1.9rem;
+  line-height: 1.15;
+  color: var(--np-heading);
+}
+
+.np-nice-list-card__text {
+  max-width: 26ch;
+  font-size: 1rem;
+  line-height: 1.45;
+  color: var(--np-meta);
+}
+
+.np-nice-list-card .np-button {
+  margin-top: 6px;
+}
+
+.np-nice-list-card:hover .np-button {
+  transform: translateY(-2px);
+}
+
+/* 22. Lead story meta on small screens: keep byline and date, drop reading time
+   (avoids a stray trailing bullet when the line wraps)
+   ========================================================================== */
+
+@media only screen and (max-width: 47.99rem) {
+  .m-featured-article__timestamp > :nth-child(4),
+  .m-featured-article__timestamp > :nth-child(5) {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   POST PAGES (v2.4.0)
+   ========================================================================== */
+
+/* 23. Reading width and storybook drop cap
+   Text is held to a comfortable ~70 characters per line; cards and images keep the wider column.
+   ========================================================================== */
+
+.post-template .js-post-content > p,
+.post-template .js-post-content > ul,
+.post-template .js-post-content > ol,
+.post-template .js-post-content > blockquote,
+.post-template .js-post-content > h2,
+.post-template .js-post-content > h3,
+.post-template .js-post-content > h4,
+.post-template .js-post-content > h5,
+.post-template .js-post-content > h6,
+.post-template .js-post-content > hr,
+.post-template .js-post-content > .np-post-tags {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-template .js-post-content > p:first-child::first-letter {
+  float: left;
+  margin: .06em .12em 0 0;
+  font-family: var(--np-font-display);
+  font-size: 3.9em;
+  font-weight: 400;
+  line-height: .8;
+  color: var(--np-red);
+}
+
+[data-theme=dark] .post-template .js-post-content > p:first-child::first-letter {
+  color: var(--np-gold-light);
+}
+
+/* 24. Post header: tag, title, then one compact byline
+   ========================================================================== */
+
+.np-post-heading {
+  text-align: center;
+}
+
+@media only screen and (min-width: 48rem) {
+  .np-post-heading {
+    margin-bottom: 44px;
+  }
+}
+
+.np-tag-pill,
+.l-post-content a.np-tag-pill {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background-color: var(--np-tag-bg);
+  color: var(--np-tag-text);
+  font-family: var(--np-font-body);
+  font-weight: 600;
+  font-size: .75rem;
+  line-height: 1.4;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color .2s ease, color .2s ease;
+}
+
+.np-tag-pill:hover,
+.l-post-content a.np-tag-pill:hover {
+  background-color: var(--np-red);
+  color: #ffffff;
+}
+
+.np-post-heading .np-tag-pill {
+  margin-bottom: 14px;
+}
+
+.np-post-byline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 6px;
+  font-family: var(--np-font-body);
+  font-size: 1rem;
+  color: var(--np-meta);
+}
+
+.np-post-byline__avatar {
+  display: block;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  padding: 2px;
+  border-radius: 50%;
+  background: repeating-linear-gradient(-45deg, var(--np-red) 0 5px, #ffffff 5px 10px);
+}
+
+.np-post-byline__avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--background-color);
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: var(--np-surface);
+}
+
+.np-post-byline__text {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 10px;
+}
+
+.np-post-byline__author {
+  color: var(--np-byline);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.np-post-byline__author:hover {
+  color: var(--np-red);
+}
+
+.np-post-byline__dot {
+  opacity: .5;
+}
+
+/* 25. Ghost editor blocks: "gift tag" callouts, pill buttons, paper bookmarks
+   Ghost loads its own block styles after the theme, so these selectors are deliberately specific.
+   ========================================================================== */
+
+.l-post-content .kg-cta-card:not(.kg-cta-bg-none),
+.l-post-content .kg-callout-card:not(.kg-callout-card-accent) {
+  position: relative;
+  border: 2px dashed var(--np-gold);
+  border-radius: var(--np-radius);
+  background-color: var(--np-surface);
+  background-image: radial-gradient(circle at 12% 0%, rgba(196, 154, 82, .14), transparent 55%);
+  box-shadow: var(--article-shadow-normal);
+}
+
+/* The punched hole and string of a gift tag */
+.l-post-content .kg-cta-card:not(.kg-cta-bg-none)::before,
+.l-post-content .kg-callout-card:not(.kg-callout-card-accent)::before {
+  content: '';
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--np-gold);
+  border-radius: 50%;
+  background-color: var(--background-color);
+}
+
+.l-post-content .kg-cta-card.kg-cta-bg-red,
+.l-post-content .kg-callout-card.kg-callout-card-red {
+  background-color: color-mix(in srgb, var(--np-red) 8%, var(--np-surface));
+}
+
+.l-post-content .kg-cta-card.kg-cta-bg-yellow,
+.l-post-content .kg-callout-card.kg-callout-card-yellow {
+  background-color: color-mix(in srgb, var(--np-gold) 14%, var(--np-surface));
+}
+
+.l-post-content .kg-cta-card .kg-cta-text,
+.l-post-content .kg-callout-card .kg-callout-text {
+  font-family: var(--np-font-body);
+  color: var(--primary-foreground-color);
+}
+
+/* Buttons inside blocks: the theme's red pill */
+.l-post-content a.kg-cta-button,
+.l-post-content .kg-button-card a.kg-btn {
+  height: auto;
+  min-height: 44px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-family: var(--np-font-body);
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.2;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(212, 22, 22, .25);
+  transition: transform .2s var(--np-ease), box-shadow .2s var(--np-ease);
+}
+
+.l-post-content a.kg-cta-button:hover,
+.l-post-content .kg-button-card a.kg-btn:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(212, 22, 22, .3);
+}
+
+/* Bookmarks: paper cards with the candy-cane ribbon */
+.l-post-content .kg-bookmark-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--np-radius);
+  background-color: var(--np-surface);
+  box-shadow: 0 0 0 1px var(--np-surface-border), var(--article-shadow-normal);
+  transition: transform .25s var(--np-ease), box-shadow .25s var(--np-ease);
+}
+
+.l-post-content .kg-bookmark-container::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 5px;
+  background: repeating-linear-gradient(-45deg, var(--np-red) 0 8px, #ffffff 8px 16px);
+}
+
+.l-post-content .kg-bookmark-card:hover .kg-bookmark-container {
+  opacity: 1;
+  transform: translateY(-3px);
+  box-shadow: 0 0 0 1px var(--np-surface-border), var(--article-shadow-hover);
+}
+
+.l-post-content .kg-bookmark-title {
+  font-family: var(--np-font-body);
+  font-weight: 700;
+  color: var(--titles-color);
+}
+
+.l-post-content .kg-bookmark-description,
+.l-post-content .kg-bookmark-metadata {
+  font-family: var(--np-font-body);
+  color: var(--np-meta);
+}
+
+/* Toggles and images */
+.l-post-content .kg-toggle-card {
+  border-radius: var(--np-radius);
+  background-color: var(--np-surface);
+  box-shadow: 0 0 0 1px var(--np-surface-border);
+}
+
+.l-post-content .kg-image-card img {
+  border-radius: var(--np-radius);
+}
+
+/* 26. Tags at the end of the post
+   ========================================================================== */
+
+.np-post-tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 40px;
+  padding-top: 22px;
+  border-top: 1px dashed var(--np-surface-border);
+}
+
+.np-post-tags__label {
+  font-family: var(--np-font-body);
+  font-weight: 700;
+  font-size: .9rem;
+  color: var(--np-meta);
+}
+
+.l-post-content .np-post-tags ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.l-post-content .np-post-tags li {
+  margin: 0;
+}
+
+/* 27. End of post: share, sign-off, next and previous
+   ========================================================================== */
+
+.np-post-end {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  max-width: 820px;
+  margin: 10px auto 60px;
+}
+
+/* Share */
+.np-share {
+  text-align: center;
+}
+
+.np-share__title {
+  margin: 0 0 16px;
+  font-family: var(--np-font-display);
+  font-weight: 400;
+  font-size: 1.75rem;
+  line-height: 1.2;
+  color: var(--np-heading);
+}
+
+.np-share__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.np-share__native[hidden] {
+  display: none;
+}
+
+.np-share__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 46px;
+  padding: 6px 18px 6px 7px;
+  border: 1px solid var(--np-surface-border);
+  border-radius: 999px;
+  background-color: var(--np-surface);
+  box-shadow: var(--article-shadow-normal);
+  color: var(--titles-color);
+  font-family: var(--np-font-body);
+  font-weight: 700;
+  font-size: .95rem;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .2s var(--np-ease), box-shadow .2s var(--np-ease);
+}
+
+.np-share__button:hover,
+.np-share__button:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: var(--article-shadow-hover);
+}
+
+.np-share__button:focus-visible {
+  outline: 3px solid var(--np-gold);
+  outline-offset: 2px;
+}
+
+.np-share__icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+}
+
+.np-share__status {
+  min-height: 1.4em;
+  margin: 10px 0 0;
+  font-family: var(--np-font-body);
+  font-size: .9rem;
+  color: var(--np-byline);
+}
+
+/* Sign-off card */
+.np-signoff {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 30px 28px 26px;
+  overflow: hidden;
+  border: 1px solid var(--np-surface-border);
+  border-radius: var(--np-radius);
+  background-color: var(--np-surface);
+  box-shadow: var(--article-shadow-normal);
+}
+
+.np-signoff::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: repeating-linear-gradient(-45deg, var(--np-red) 0 8px, #ffffff 8px 16px);
+}
+
+.np-signoff__avatar {
+  display: block;
+  flex-shrink: 0;
+  width: 104px;
+  height: 104px;
+  padding: 3px;
+  border-radius: 50%;
+  background: repeating-linear-gradient(-45deg, var(--np-red) 0 6px, #ffffff 6px 12px);
+}
+
+.np-signoff__avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 3px solid var(--np-surface);
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: var(--np-surface);
+}
+
+.np-signoff__label {
+  margin: 0;
+  font-family: var(--np-font-body);
+  font-weight: 700;
+  font-size: .75rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--np-meta);
+}
+
+.np-signoff__name {
+  margin: 2px 0 6px;
+  font-family: var(--np-font-display);
+  font-size: 1.9rem;
+  line-height: 1.15;
+}
+
+.np-signoff__name a {
+  color: var(--np-heading);
+  text-decoration: none;
+}
+
+.np-signoff__bio {
+  margin: 0 0 12px;
+  font-family: var(--np-font-body);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--primary-foreground-color);
+}
+
+.np-signoff__more {
+  font-family: var(--np-font-body);
+  font-weight: 700;
+  color: var(--np-red);
+  text-decoration: none;
+}
+
+[data-theme=dark] .np-signoff__more {
+  color: var(--np-gold-light);
+}
+
+.np-signoff__more:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 47.99rem) {
+  .np-signoff {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Previous and next story */
+.np-post-nav {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.np-post-nav__link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px;
+  border: 1px solid var(--np-surface-border);
+  border-radius: var(--np-radius);
+  background-color: var(--np-surface);
+  box-shadow: var(--article-shadow-normal);
+  text-decoration: none;
+  transition: transform .2s var(--np-ease), box-shadow .2s var(--np-ease);
+}
+
+.np-post-nav__link:hover,
+.np-post-nav__link:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: var(--article-shadow-hover);
+}
+
+.np-post-nav__link--next {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.np-post-nav__image {
+  flex-shrink: 0;
+  width: 76px;
+  height: 76px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.np-post-nav__text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.np-post-nav__label {
+  font-family: var(--np-font-body);
+  font-weight: 700;
+  font-size: .75rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--np-red);
+}
+
+[data-theme=dark] .np-post-nav__label {
+  color: var(--np-gold-light);
+}
+
+.np-post-nav__title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  font-family: var(--np-font-body);
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.3;
+  color: var(--titles-color);
+}
+
+@media only screen and (max-width: 47.99rem) {
+  .np-post-nav {
+    grid-template-columns: 1fr;
+  }
+
+  .np-post-nav__spacer {
+    display: none;
+  }
+}
+
+/* 28. Candy-cane reading progress bar
+   ========================================================================== */
+
+.np-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 6;
+  height: 6px;
+  pointer-events: none;
+}
+
+.np-progress__bar {
+  position: relative;
+  width: calc(var(--np-progress, 0) * 100%);
+  height: 100%;
+  background: repeating-linear-gradient(-45deg, var(--np-red) 0 8px, #ffffff 8px 16px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+}
+
+.np-progress__sleigh {
+  position: absolute;
+  top: -3px;
+  right: -16px;
+  width: 30px;
+  height: 19px;
+  opacity: 0;
+  transition: opacity .3s ease;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .35));
+}
+
+.np-progress.is-reading .np-progress__sleigh {
+  opacity: 1;
+}
+
+/* 29. "Post from the North Pole" subscribe block
+   ========================================================================== */
+
+.m-subscribe-section.np-mailbag {
+  background-image: none;
+  background-color: transparent;
+  padding: 20px 0 50px;
+}
+
+.np-mailbag__envelope {
+  position: relative;
+  padding: 40px 28px 34px;
+  border: 10px solid transparent;
+  border-radius: var(--np-radius);
+  /* Airmail stripes in candy-cane colours around an evergreen envelope */
+  background:
+    linear-gradient(var(--np-evergreen), var(--np-evergreen)) padding-box,
+    repeating-linear-gradient(-45deg, var(--np-red) 0 14px, #fbf6ea 14px 28px) border-box;
+  box-shadow: var(--article-shadow-normal);
+  color: #fbf6ea;
+}
+
+[data-theme=dark] .np-mailbag__envelope {
+  background:
+    linear-gradient(#163a30, #163a30) padding-box,
+    repeating-linear-gradient(-45deg, var(--np-red) 0 14px, #fbf6ea 14px 28px) border-box;
+}
+
+/* Postage stamp with perforated edge */
+.np-mailbag__stamp {
+  position: absolute;
+  top: -22px;
+  right: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  width: 74px;
+  height: 86px;
+  outline: 5px dotted var(--np-evergreen);
+  outline-offset: -3px;
+  background-color: #fbf6ea;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .3);
+  transform: rotate(7deg);
+  color: var(--np-red);
+  font-family: var(--np-font-body);
+  font-weight: 700;
+  font-size: .55rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+[data-theme=dark] .np-mailbag__stamp {
+  outline-color: #163a30;
+}
+
+.np-mailbag .m-subscribe-section__content {
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media only screen and (min-width: 48rem) {
+  .np-mailbag__envelope {
+    padding: 44px 48px 40px;
+  }
+
+  .np-mailbag .m-subscribe-section__content {
+    flex-direction: row;
+  }
+
+  .np-mailbag .m-subscribe-section__text {
+    padding-right: 30px;
+  }
+}
+
+.np-mailbag .m-subscribe-section__text {
+  margin-bottom: 0;
+}
+
+.np-mailbag .m-subscribe-section__title {
+  margin: 0 0 8px;
+  font-size: clamp(1.9rem, 4vw, 2.5rem);
+  line-height: 1.1;
+  color: #fbf6ea;
+}
+
+.np-mailbag .m-subscribe-section__description {
+  margin: 0;
+  color: rgba(251, 246, 234, .9);
+}
+
+.np-mailbag .m-subscribe-section__form {
+  flex-shrink: 0;
+}
+
+.np-mailbag .m-input.in-subscribe-section {
+  border: 0;
+  border-radius: 999px;
+  background-color: #fbf6ea;
+  color: var(--np-ink);
+  padding-left: 20px;
+}
+
+.np-mailbag .m-button.primary {
+  border-radius: 999px;
+  background-color: var(--np-red);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.np-mailbag .m-button.primary:hover {
+  background-color: var(--np-red-deep);
+}
+
+.np-mailbag .m-heading__description.in-newsletter-form,
+.np-mailbag .m-subscribe__invalid,
+.np-mailbag .m-subscribe__error {
+  color: #fbf6ea;
+}
+
+/* 30. Festive 404 page
+   ========================================================================== */
+
+.l-fullscreen.np-404 {
+  height: auto;
+  min-height: 100vh;
+  padding: 110px 0 40px;
+}
+
+.np-404__content {
+  max-width: 600px;
+}
+
+.np-404__snowman {
+  display: block;
+  width: 150px;
+  height: auto;
+  margin: 0 auto 10px;
+  transform-origin: 50% 100%;
+  animation: np-wobble 4s ease-in-out infinite;
+}
+
+@keyframes np-wobble {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+
+.np-404__ground {
+  fill: #e8dcc0;
+}
+
+[data-theme=dark] .np-404__ground {
+  fill: rgba(255, 255, 255, .08);
+}
+
+.np-404__question {
+  fill: var(--np-gold);
+}
+
+.np-404__code {
+  margin: 0 0 6px;
+  font-family: var(--np-font-body);
+  font-weight: 700;
+  font-size: .8rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--np-gold);
+}
+
+.np-404__title {
+  margin: 0 0 14px;
+  font-family: var(--np-font-display);
+  font-weight: 400;
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 1.1;
+  color: var(--np-heading);
+}
+
+.np-404__text {
+  margin: 0 auto 26px;
+  max-width: 34ch;
+  font-family: var(--np-font-body);
+  font-size: 1.125rem;
+  line-height: 1.5;
+  color: var(--primary-foreground-color);
+}
+
+/* Outline style for a secondary button on a plain page background */
+.np-button--outline {
+  background-color: transparent;
+  color: var(--np-evergreen);
+  box-shadow: inset 0 0 0 2px var(--np-evergreen);
+}
+
+.np-button--outline:hover {
+  background-color: var(--np-evergreen);
+  color: #ffffff;
+}
+
+[data-theme=dark] .np-button--outline {
+  color: var(--np-gold-light);
+  box-shadow: inset 0 0 0 2px var(--np-gold-light);
+}
+
+[data-theme=dark] .np-button--outline:hover {
+  background-color: var(--np-gold-light);
+  color: #10201a;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .np-404__snowman {
+    animation: none;
+  }
+
+  .np-share__button:hover,
+  .np-post-nav__link:hover,
+  .l-post-content .kg-bookmark-card:hover .kg-bookmark-container,
+  .l-post-content a.kg-cta-button:hover {
+    transform: none;
+  }
+}

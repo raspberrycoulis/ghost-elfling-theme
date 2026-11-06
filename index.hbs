@@ -35,21 +35,51 @@ into the {body} of the default.hbs template --}}
   {{!-- Inject styles of the hero image to make it responsive --}}
   {{> hero background=@site.cover_image alt=@site.description}}
   <div class="m-hero__content" data-animate="fade-down">
+    {{#if @custom.show_christmas_countdown}}
+      {{!-- Filled in by festive.js using the visitor's own date, so it stays correct across time zones --}}
+      <p class="np-countdown js-christmas-countdown" hidden></p>
+    {{/if}}
     <h1 class="m-hero-title bigger">{{@site.title}}</h1>
     {{#if @site.description}}
       <p class="m-hero-description bigger">{{@site.description}}</p>
     {{/if}}
+    <div class="np-hero-actions">
+      <a href="#latest" class="np-button np-button--primary">{{t "Read the latest stories"}}</a>
+      {{#if @custom.hero_button_url}}
+        <a href="{{@custom.hero_button_url}}" class="np-button np-button--secondary">{{#if @custom.hero_button_text}}{{@custom.hero_button_text}}{{else}}{{t "Check the Nice List"}}{{/if}}</a>
+      {{/if}}
+    </div>
   </div>
   </section>
   <div class="l-content">
+    <div class="np-section-heading l-wrapper" id="latest">
+      <h2 class="np-section-heading__title">{{t "Latest from the North Pole"}}</h2>
+      {{#if @custom.festive_decorations}}
+        <svg class="np-holly" viewBox="0 0 120 28" width="120" height="28" aria-hidden="true" focusable="false">
+          <path class="np-holly__leaf" d="M58 14c-6-9-16-12-26-10 3 3 2 6-1 7 3 2 3 5 0 7 10 3 21 1 27-4z"/>
+          <path class="np-holly__leaf" d="M62 14c6-9 16-12 26-10-3 3-2 6 1 7-3 2-3 5 0 7-10 3-21 1-27-4z"/>
+          <circle class="np-holly__berry" cx="56" cy="17" r="4"/>
+          <circle class="np-holly__berry" cx="64" cy="17" r="4"/>
+          <circle class="np-holly__berry" cx="60" cy="11" r="4"/>
+          <path class="np-holly__rule" d="M0 14h24M96 14h24"/>
+        </svg>
+      {{/if}}
+    </div>
     <div class="l-wrapper" data-animate="fade-up">
       <div class="l-grid centered">
-        {{#get "posts" filter="featured:true" include="authors,tags" limit="5" as |featured|}}
+        {{!-- "Santa's pick": the most recent featured post, shown as the lead story.
+        It is hidden from the grid below so it never appears twice, and the Nice List
+        card fills its slot so every row of three stays full. --}}
+        {{#get "posts" filter="featured:true" include="authors,tags" limit="1" as |featured|}}
           {{#if featured}}
-            <div class="m-featured-slider swiper js-featured-slider">
+            <div class="m-featured-slider swiper np-lead">
               <div class="m-featured-slider__list swiper-wrapper">
                 {{#foreach featured}}
                   <div class="m-featured-slider__list__item swiper-slide">
+                    <style>
+                      .l-grid > .np-post-{{id}} { display: none; }
+                      .l-grid:has(> .np-post-{{id}}) > .np-nice-list-card { display: flex; }
+                    </style>
                     <article class="m-featured-article {{#unless feature_image}}no-picture{{/unless}}">
                       <div class="m-featured-article__picture">
                         {{#if feature_image}}
@@ -79,15 +109,17 @@ into the {body} of the default.hbs template --}}
                         {{/if}}
                       </div>
                       <div class="m-featured-article__ribbon">
-                        <span class="icon-star"></span>
-                        <span>{{t "Featured"}}</span>
+                        <span class="icon-star" aria-hidden="true"></span>
+                        <span>{{t "Santa's pick"}}</span>
                       </div>
                       <a href="{{url}}" class="m-featured-article__content">
                         <h2 class="m-featured-article__title js-featured-article-title" title="{{title}}">
                           {{title}}
                         </h2>
                         <div class="m-featured-article__timestamp">
-                          <span>{{date published_at timeago="true"}}</span>
+                          <span class="np-byline">{{t "By"}} {{primary_author.name}}</span>
+                          <span>&bull;</span>
+                          <time datetime="{{date published_at format="YYYY-MM-DD"}}">{{date published_at format="D MMMM YYYY"}}</time>
                           <span>&bull;</span>
                           <span>{{reading_time minute=(t "Only a minute") minutes=(t "Takes % minutes")}}</span>
                         </div>
@@ -96,22 +128,31 @@ into the {body} of the default.hbs template --}}
                   </div>
                 {{/foreach}}
               </div>
-              <button class="m-icon-button in-featured-articles swiper-button-prev js-featured-slider-button" aria-label="{{t "Previous"}}">
-                <span class="icon-arrow-left" aria-hidden="true"></span>
-              </button>
-              <button class="m-icon-button in-featured-articles swiper-button-next js-featured-slider-button" aria-label="{{t "Next"}}">
-                <span class="icon-arrow-right" aria-hidden="true"></span>
-              </button>
             </div>
           {{/if}}
         {{/get}}
         {{!-- The tag below iterates over all the posts --}}
         {{> "loop"}}
+        {{!-- Only shown (via the style above) when the lead story would otherwise leave a gap in the grid --}}
+        {{#if @custom.hero_button_url}}
+          <aside class="m-article-card np-nice-list-card">
+            <a href="{{@custom.hero_button_url}}" class="np-nice-list-card__link">
+              <svg class="np-nice-list-card__star" viewBox="0 0 24 24" width="56" height="56" aria-hidden="true" focusable="false"><path d="M12 3.5l2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.8l-5.2 2.7 1-5.8-4.2-4.1 5.8-.8z"/></svg>
+              <span class="np-nice-list-card__title">{{t "Is your name on the Nice List?"}}</span>
+              <span class="np-nice-list-card__text">{{t "Santa checks it twice. Find out if your name is on this year's list."}}</span>
+              <span class="np-button np-button--primary">{{#if @custom.hero_button_text}}{{@custom.hero_button_text}}{{else}}{{t "Check the Nice List"}}{{/if}}</span>
+            </a>
+          </aside>
+        {{/if}}
       </div>
     </div>
     {{!-- Links to Previous/Next posts --}}
     {{pagination}}
   </div>
+  {{!-- The character authors, on the first page of the homepage only --}}
+  {{#is "home"}}
+    {{> "team"}}
+  {{/is}}
 </main>
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}

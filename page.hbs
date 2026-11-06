@@ -25,16 +25,19 @@ into the {body} of the default.hbs template --}}
 <main class="main-wrap">
   {{!-- Everything inside the #post tags pulls data from the post --}}
   {{#post}}
-    {{!-- Inject styles of the hero image to make it responsive --}}
-    {{> hero background=feature_image}}
-    <div class="m-hero__content" data-animate="fade-down">
-      <h1 class="m-hero-title bigger">{{title}}</h1>
-      {{#if custom_excerpt}}
-        <p class="m-hero-description">{{custom_excerpt}}</p>
-      {{/if}}
-    </div>
-    </section>
-    <article>
+    {{!-- Editors can hide the title and feature image per page in Ghost's page settings --}}
+    {{#if @page.show_title_and_feature_image}}
+      {{!-- Inject styles of the hero image to make it responsive --}}
+      {{> hero background=feature_image}}
+      <div class="m-hero__content" data-animate="fade-down">
+        <h1 class="m-hero-title bigger">{{title}}</h1>
+        {{#if custom_excerpt}}
+          <p class="m-hero-description">{{custom_excerpt}}</p>
+        {{/if}}
+      </div>
+      </section>
+    {{/if}}
+    <article{{#unless @page.show_title_and_feature_image}} class="np-page-no-hero"{{/unless}}>
       <div class="l-content">
         <div class="l-wrapper in-post" data-animate="fade-up">
           <div class="l-post-content">
@@ -42,6 +45,12 @@ into the {body} of the default.hbs template --}}
               {{content}}
             </div>
           </div>
+          {{!-- Share buttons on the list pages only (outside .l-post-content so article styles don't apply) --}}
+          {{#has slug="the-nice-list,the-naughty-list"}}
+            <div class="np-post-end">
+              {{> "share" label=(t "Share this list")}}
+            </div>
+          {{/has}}
         </div>
       </div>
     </article>

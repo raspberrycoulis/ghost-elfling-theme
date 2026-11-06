@@ -35,7 +35,7 @@ into the {body} of the default.hbs template --}}
     </section>
     <div class="l-content">
       <div class="l-wrapper" data-animate="fade-up">
-        {{#get 'authors' limit='all' include='count.posts' order='count.posts desc'}}
+        {{#get 'authors' limit='100' include='count.posts' order='count.posts desc'}}
           <div class="l-grid centered">
             {{#foreach authors}}
               <article class="m-article-card as-author">

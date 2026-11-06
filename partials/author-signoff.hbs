@@ -1,0 +1,21 @@
+{{!--
+Sign-off card at the end of a post: who wrote it, their bio and a link to more of their stories.
+Use inside a post context.
+--}}
+<section class="np-signoff" aria-label="{{t "About the author"}}">
+  <a href="{{primary_author.url}}" class="np-signoff__avatar" tabindex="-1" aria-hidden="true">
+    {{#if primary_author.profile_image}}
+      <img src="{{img_url primary_author.profile_image size="s" format="webp"}}" alt="" loading="lazy" width="96" height="96">
+    {{else}}
+      <img src="{{asset "images/default-avatar-square-normal.jpg"}}" alt="" loading="lazy" width="96" height="96">
+    {{/if}}
+  </a>
+  <div class="np-signoff__body">
+    <p class="np-signoff__label">{{t "Written by"}}</p>
+    <p class="np-signoff__name"><a href="{{primary_author.url}}">{{primary_author.name}}</a></p>
+    {{#if primary_author.bio}}
+      <p class="np-signoff__bio">{{primary_author.bio}}</p>
+    {{/if}}
+    <a href="{{primary_author.url}}" class="np-signoff__more">{{t "More stories from"}} {{primary_author.name}} <span aria-hidden="true">&rarr;</span></a>
+  </div>
+</section>

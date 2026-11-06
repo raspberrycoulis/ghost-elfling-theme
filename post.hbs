@@ -23,6 +23,12 @@ into the {body} of the default.hbs template --}}
 {{/post}}
 
 <main class="main-wrap">
+  {{!-- Candy-cane reading progress bar with Santa's sleigh at the tip (driven by festive.js) --}}
+  <div class="np-progress js-reading-progress" aria-hidden="true">
+    <div class="np-progress__bar">
+      <svg class="np-progress__sleigh" viewBox="0 0 32 20" width="30" height="19" focusable="false"><path d="M3 16.5h22.5c2.2 0 3.5-1.2 3.5-3" fill="none" stroke="#7a4b12" stroke-width="1.8" stroke-linecap="round"/><path d="M8 16.5v-3M19 16.5v-3" stroke="#7a4b12" stroke-width="1.6"/><path d="M5 13.5c-1.2-3.2-.6-7.2 1.4-9.2h2.2c-.6 2.2-.4 4.5.6 5.6h11.6l3.2-3.6h2.6l-1.6 7.2z" fill="#d41616" stroke="#8f0f12" stroke-width="1" stroke-linejoin="round"/><path d="M9.6 9.9h11.6" stroke="#f3c45a" stroke-width="1.4"/><rect x="9.6" y="3.2" width="5" height="4.6" rx=".6" fill="#2f7d4f"/><path d="M12.1 3.2v4.6" stroke="#f3c45a" stroke-width="1"/></svg>
+    </div>
+  </div>
   {{#post}}
     {{!-- Inject styles of the hero image to make it responsive --}}
     {{> hero background=feature_image}}
@@ -45,95 +51,66 @@ into the {body} of the default.hbs template --}}
         <div class="l-wrapper in-post {{#unless feature_image}}no-image{{/unless}} js-animation-wrapper" data-animate="fade-up">
           <div
             class="l-post-content js-progress-content">
-            <header class="m-heading">
+            <header class="m-heading np-post-heading">
+              {{#if primary_tag}}
+                <a href="{{primary_tag.url}}" class="np-tag-pill">{{primary_tag.name}}</a>
+              {{/if}}
               <h1 class="m-heading__title in-post">{{title}}</h1>
-              <div class="m-heading__meta">
-                {{#if primary_tag}}
-                  <a href="{{primary_tag.url}}" class="m-heading__meta__tag">{{primary_tag.name}}</a>
-                  <span class="m-heading__meta__divider" aria-hidden="true">&bull;</span>
-                {{/if}}
-                <span class="m-heading__meta__time">{{date published_at format='Do MMMM YYYY'}}</span>
+              <div class="np-post-byline">
+                <a href="{{primary_author.url}}" class="np-post-byline__avatar" tabindex="-1" aria-hidden="true">
+                  {{#if primary_author.profile_image}}
+                    <img src="{{img_url primary_author.profile_image size="xs" format="webp"}}" alt="" width="40" height="40">
+                  {{else}}
+                    <img src="{{asset "images/default-avatar-square-small.jpg"}}" alt="" width="40" height="40">
+                  {{/if}}
+                </a>
+                <span class="np-post-byline__text">
+                  <span>{{t "By"}} <a href="{{primary_author.url}}" class="np-post-byline__author">{{primary_author.name}}</a>{{#has author="count:>1"}} {{authors separator=", " prefix=(t "Among with no break line") from="2"}}{{/has}}</span>
+                  <span class="np-post-byline__dot" aria-hidden="true">&bull;</span>
+                  <time datetime="{{date published_at format="YYYY-MM-DD"}}">{{date published_at format="D MMMM YYYY"}}</time>
+                  <span class="np-post-byline__dot" aria-hidden="true">&bull;</span>
+                  <span>{{reading_time minute=(t "Only a minute") minutes=(t "Takes % minutes")}}</span>
+                </span>
               </div>
             </header>
-            <section class="m-author">
-              <div class="m-author__content">
-                <div class="m-author__picture">
-                  <a href="{{primary_author.url}}" class="m-author-picture" aria-label="{{primary_author.name}}">
-                    {{#if primary_author.profile_image}}
-                    <div style="background-image: url({{primary_author.profile_image}});"></div>
-                    {{else}}
-                    <div style="background-image: url({{asset "images/default-avatar-square-small.jpg"}});"></div>
-                    {{/if}}
-                  </a>
-                </div>
-              <div class="m-author__info">
-                <h4 class="m-author__name">
-                  <a href="{{primary_author.url}}">{{primary_author.name}}</a>
-                </h4>
-                {{#has author="count:>1"}}
-                  <p class="m-small-text in-author-along-with">
-                    {{authors separator=", " prefix=(t "Among with no break line") from="2"}}
-                  </p>
-                {{/has}}
-                {{#if primary_author.bio}}
-                  <p class="m-author__bio">{{primary_author.bio}}</p>
-                {{/if}}
-                <ul class="m-author-links">
-                  {{#if primary_author.website}}
-                    <li>
-                      <a href="{{primary_author.website}}" target="_blank" rel="noopener" aria-label="{{t "Website"}}">
-                        <span class="icon-globe" aria-hidden="true"></span>
-                      </a>
-                    </li>
-                  {{/if}}
-                  {{#if primary_author.facebook}}
-                    <li>
-                      <a href="https://facebook.com/{{primary_author.facebook}}" target="_blank" rel="noopener" aria-label="Facebook">
-                        <span class="icon-facebook" aria-hidden="true"></span>
-                      </a>
-                    </li>
-                  {{/if}}
-                  {{#if primary_author.twitter}}
-                    <li>
-                      <a href="https://twitter.com/{{primary_author.twitter}}" target="_blank" rel="noopener" aria-label="Twitter">
-                        <span class="icon-twitter" aria-hidden="true"></span>
-                      </a>
-                    </li>
-                  {{/if}}
-                </ul>
-              </div>
-            </div>
-          </section>
             <div class="pos-relative js-post-content">
               {{content}}
-              {{!-- List of tags  --}}
+              {{!-- Tags as pill labels --}}
               {{#if tags}}
-                <section class="m-tags in-post">
-                  <h3 class="m-submenu-title">{{t "Tags"}}</h3>
+                <section class="np-post-tags" aria-label="{{t "Tags"}}">
+                  <span class="np-post-tags__label">{{t "Filed under"}}</span>
                   <ul>
                     {{#foreach tags}}
-                      <li>
-                        <a href="{{url}}" title="{{name}}">{{name}}</a>
-                      </li>
+                      <li><a href="{{url}}" class="np-tag-pill">{{name}}</a></li>
                     {{/foreach}}
                   </ul>
                 </section>
               {{/if}}
             </div>
           </div>
+          {{!-- Outside .l-post-content so the article's link and button styles don't apply --}}
+          <div class="np-post-end">
+            {{> "share"}}
+            {{> "author-signoff"}}
+            {{> "post-nav"}}
+          </div>
         </div>
         {{!-- Email subscribe form at the bottom of the page --}}
         {{#if @site.members_enabled}}
-          <section class="m-subscribe-section js-newsletter">
+          <section class="m-subscribe-section np-mailbag js-newsletter">
             <div class="l-wrapper in-post">
-              <div class="m-subscribe-section__content">
-                <div class="m-subscribe-section__text">
-                  <h4 class="m-subscribe-section__title">{{t "Subscribe to our newsletter"}}</h4>
-                  <p class="m-subscribe-section__description">
-                    {{t "Get the latest posts delivered right to your inbox."}}
-                  </p>
+              <div class="np-mailbag__envelope">
+                <div class="np-mailbag__stamp" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="34" height="34" focusable="false"><path d="M12 3.5l2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.8l-5.2 2.7 1-5.8-4.2-4.1 5.8-.8z" fill="#f3c45a" stroke="#a80f12" stroke-width="1.1" stroke-linejoin="round"/></svg>
+                  <span>{{t "North Pole"}}</span>
                 </div>
-                <div class="m-subscribe-section__form">
+                <div class="m-subscribe-section__content">
+                  <div class="m-subscribe-section__text">
+                    <h2 class="m-subscribe-section__title">{{t "Post from the North Pole"}}</h2>
+                    <p class="m-subscribe-section__description">
+                      {{t "New stories from Santa and his friends, sent straight to your inbox. It's our email newsletter, so ask a grown-up first!"}}
+                    </p>
+                  </div>
                   {{> "newsletter-form"}}
                 </div>
               </div>

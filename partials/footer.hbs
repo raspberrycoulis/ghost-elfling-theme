@@ -3,6 +3,35 @@ This footer template is shared across all the pages.
 --}}
 
 <footer class="m-footer">
+  {{#if @custom.festive_decorations}}
+    {{!-- Decorative snowy village that sits on top of the footer --}}
+    <svg class="np-village" viewBox="0 0 1500 110" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path fill="currentColor" d="M0 110V92l40-4 22-34 22 34h18V70l34-26 34 26v22h24l26-44 26 44h30V78l28-22 28 22v14h40l20-30 20 30h26V60l40-30 40 30v32h22l28-50 28 50h36V76l30-24 30 24v16h34l22-36 22 36h28V66l36-28 36 28v26h26l24-40 24 40h30V74l32-24 32 24v18h22l26-46 26 46h34V64l38-30 38 30v28h24l22-36 22 36h32V72l30-24 30 24v20h40l26-42 26 42h22V92h31v18z"/>
+      <g class="np-village__snow">
+        <polyline points="107,72 136,49 165,72"/>
+        <polyline points="281,80 304,61 327,80"/>
+        <polyline points="443,62 478,35 513,62"/>
+        <polyline points="637,78 662,57 687,78"/>
+        <polyline points="803,68 834,43 865,68"/>
+        <polyline points="979,76 1006,55 1033,76"/>
+        <polyline points="1151,66 1184,39 1217,66"/>
+        <polyline points="1327,74 1352,53 1377,74"/>
+      </g>
+      <g class="np-village__window">
+        <rect x="132" y="80" width="8" height="9" rx="1"/>
+        <rect x="300" y="88" width="8" height="9" rx="1"/>
+        <rect x="462" y="70" width="8" height="9" rx="1"/>
+        <rect x="486" y="70" width="8" height="9" rx="1"/>
+        <rect x="658" y="86" width="8" height="9" rx="1"/>
+        <rect x="818" y="76" width="8" height="9" rx="1"/>
+        <rect x="842" y="76" width="8" height="9" rx="1"/>
+        <rect x="1002" y="84" width="8" height="9" rx="1"/>
+        <rect x="1168" y="74" width="8" height="9" rx="1"/>
+        <rect x="1192" y="74" width="8" height="9" rx="1"/>
+        <rect x="1348" y="82" width="8" height="9" rx="1"/>
+      </g>
+    </svg>
+  {{/if}}
   <div class="m-footer__content">
     {{#if @site.secondary_navigation}}
       <nav class="m-footer__nav-secondary" role="navigation" aria-label="{{t "Secondary menu in footer"}}">
