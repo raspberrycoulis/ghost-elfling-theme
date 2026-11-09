@@ -1097,19 +1097,47 @@ a[href*="/author/"] {
   padding: 30px 0 20px;
 }
 
+/* A centred, wrapping row so any number of characters looks balanced:
+   two per row on phones, three on tablets, up to five in one row on desktop.
+   A leftover card sits in the middle of the last row rather than on the left. */
 .np-team__list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 16px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
+.np-team__member {
+  flex: 0 1 calc((100% - 16px) / 2);
+}
+
+@media only screen and (min-width: 48rem) {
+  .np-team__list {
+    gap: 20px;
+  }
+
+  .np-team__member {
+    flex-basis: calc((100% - 40px) / 3);
+  }
+
+  /* Exactly four characters: two rows of two rather than three and one */
+  .np-team__list:has(> :nth-child(4):last-child) > .np-team__member {
+    flex-basis: calc((100% - 20px) / 2);
+  }
+}
+
 @media only screen and (min-width: 64rem) {
   .np-team__list {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 24px;
+  }
+
+  .np-team__member {
+    flex: 1 1 0;
+    min-width: 190px;
+    max-width: 270px;
   }
 }
 
