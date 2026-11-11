@@ -297,7 +297,17 @@ body {
   color: #ffffff;
 }
 
-@media only screen and (min-width: 48rem) {
+/* On tablet widths Ghost's Portal button sits in the bottom right corner, over
+   the open menu, so the switch moves to the bottom left there */
+@media only screen and (min-width: 48rem) and (max-width: 79.99rem) {
+  .m-toggle-darkmode {
+    right: auto;
+    left: 20px;
+  }
+}
+
+/* 80rem matches the desktop header breakpoint (see the note at the top of app.css) */
+@media only screen and (min-width: 80rem) {
   .m-toggle-darkmode {
     box-shadow: none;
   }
@@ -521,7 +531,8 @@ body {
   to { opacity: .9; }
 }
 
-@media only screen and (min-width: 48rem) {
+/* Follows the header height: 50px mobile header, 67px desktop header */
+@media only screen and (min-width: 80rem) {
   .np-lights {
     top: 67px;
   }
@@ -1045,9 +1056,17 @@ a[href*="/author/"] {
   color: var(--primary-foreground-color);
 }
 
-@media only screen and (max-width: 47.99rem) {
+@media only screen and (max-width: 79.99rem) {
   .np-support-button {
     margin-top: 6px;
+  }
+}
+
+/* Between tablet and desktop widths the header uses the mobile layout, so the
+   logo inside the menu (shown from 48rem by the .only-desktop helper) stays hidden */
+@media only screen and (min-width: 48rem) and (max-width: 79.99rem) {
+  .m-nav__left li.only-desktop {
+    display: none;
   }
 }
 
@@ -1084,7 +1103,8 @@ a[href*="/author/"] {
   padding-top: 50px;
 }
 
-@media only screen and (min-width: 48rem) {
+/* Follows the header height: 50px mobile header, 67px desktop header */
+@media only screen and (min-width: 80rem) {
   .np-page-no-hero {
     padding-top: 67px;
   }
@@ -2175,7 +2195,7 @@ a[href*="/author/"] {
 /* The mobile menu lives inside the header, so it opens just below the bar.
    Shorten it by the same amount so its bottom stays on screen. (On wider
    screens .m-menu is the header's own navigation row, so leave it alone.) */
-@media only screen and (max-width: 47.99rem) {
+@media only screen and (max-width: 79.99rem) {
   .np-announcement-visible .m-menu {
     height: calc(100vh - var(--np-announcement-offset, 0px));
     height: calc(100dvh - var(--np-announcement-offset, 0px));
