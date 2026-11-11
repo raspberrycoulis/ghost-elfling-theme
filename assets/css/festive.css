@@ -2186,3 +2186,98 @@ a[href*="/author/"] {
 .m-search.opened {
   z-index: 100;
 }
+
+/* Candy-cane look. Ghost styles the bar with its own inline CSS (including an
+   "all: unset" on everything inside it and an !important link colour), so
+   these rules start from #announcement-bar-root to take priority. The bar
+   follows the site's light/dark mode rather than Ghost's Background setting. */
+/* Stripe colours match the candy-cane title in each mode */
+#announcement-bar-root {
+  --np-bar-stripe-a: var(--np-red-soft);
+  --np-bar-stripe-b: var(--np-cream);
+  --np-bar-panel: var(--np-cream);
+  --np-bar-text: var(--np-ink);
+  --np-bar-link: var(--np-red);
+}
+
+[data-theme=dark] #announcement-bar-root {
+  --np-bar-stripe-a: #e33b3b;
+  --np-bar-stripe-b: #fbf6ea;
+  --np-bar-panel: #10261f;
+  --np-bar-text: #f3ead8;
+  --np-bar-link: #f0c674;
+}
+
+#announcement-bar-root .gh-announcement-bar {
+  background: var(--np-bar-stripe-b);
+  color: var(--np-bar-text);
+  font-family: var(--np-font-body);
+  overflow: hidden;
+}
+
+/* The stripes drift sideways like the candy-cane title, at the same rhythm.
+   They sit on their own layer, one tile wider than the bar, which slides one
+   tile's width and repeats, so the loop is seamless and cheap to animate. */
+#announcement-bar-root .gh-announcement-bar::before,
+#announcement-bar-root .gh-announcement-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+#announcement-bar-root .gh-announcement-bar::before {
+  left: -34px;
+  background: linear-gradient(-45deg,
+      var(--np-bar-stripe-a) 25%, var(--np-bar-stripe-b) 25%,
+      var(--np-bar-stripe-b) 50%, var(--np-bar-stripe-a) 50%,
+      var(--np-bar-stripe-a) 75%, var(--np-bar-stripe-b) 75%) 0 0 / 34px 34px;
+  animation: np-bar-stripes 3.4s linear infinite;
+}
+
+/* A soft shadow where the bar meets the header */
+#announcement-bar-root .gh-announcement-bar::after {
+  box-shadow: inset 0 -3px 6px rgba(0, 0, 0, .18);
+}
+
+@keyframes np-bar-stripes {
+  from { transform: translateX(0); }
+  to { transform: translateX(34px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #announcement-bar-root .gh-announcement-bar::before {
+    animation: none;
+  }
+}
+
+/* A soft panel behind the message that fades out into the stripes */
+#announcement-bar-root .gh-announcement-bar-content {
+  display: block;
+  padding: 2px 14px;
+  border-radius: 999px;
+  background-color: var(--np-bar-panel);
+  box-shadow: 0 0 10px 8px var(--np-bar-panel);
+}
+
+#announcement-bar-root .gh-announcement-bar a {
+  color: var(--np-bar-link) !important;
+  text-underline-offset: 2px;
+}
+
+#announcement-bar-root .gh-announcement-bar button {
+  background-color: var(--np-bar-panel);
+  color: var(--np-bar-text);
+  border-radius: 50%;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
+}
+
+#announcement-bar-root .gh-announcement-bar a:focus-visible,
+#announcement-bar-root .gh-announcement-bar button:focus-visible {
+  outline: 2px solid var(--np-gold);
+  outline-offset: 3px;
+}
