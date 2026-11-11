@@ -1543,6 +1543,14 @@ a[href*="/author/"] {
   transition: transform .2s var(--np-ease), box-shadow .2s var(--np-ease);
 }
 
+/* post.css makes the button block's link inline-block, which leaves its text
+   sitting high once min-height applies; restore Ghost's flex centring */
+.l-post-content .kg-button-card a.kg-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .l-post-content a.kg-cta-button:hover,
 .l-post-content .kg-button-card a.kg-btn:hover {
   opacity: 1;
@@ -2376,8 +2384,13 @@ a[href*="/author/"] {
   opacity: 1;
 }
 
-/* The theme's red pill, as on the homepage hero */
+/* The theme's red pill, as on the homepage hero.
+   post.css sets display: inline-block, which stops the text centring
+   vertically once min-height applies, so restore Ghost's flex layout. */
 .l-post-content .kg-product-card a.kg-product-card-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: auto;
   min-height: 46px;
   margin-top: 6px;
