@@ -2301,3 +2301,123 @@ a[href*="/author/"] {
   outline: 2px solid var(--np-gold);
   outline-offset: 3px;
 }
+
+/* 32. Product card ("Letters from Santa" and friends)
+   ==========================================================================
+   Styled like the "Post from the North Pole" envelope: candy-cane airmail
+   stripes around an evergreen panel. Ghost loads its own card CSS after the
+   theme and post.css forces the button colours with !important, so these
+   selectors are deliberately specific. Star ratings are styled ready for use. */
+
+.l-post-content .kg-product-card .kg-product-card-container {
+  --np-product-panel: var(--np-evergreen);
+  max-width: 560px;
+  padding: 24px 26px 26px;
+  grid-row-gap: 14px;
+  border: 10px solid transparent;
+  border-radius: var(--np-radius);
+  background:
+    linear-gradient(var(--np-product-panel), var(--np-product-panel)) padding-box,
+    repeating-linear-gradient(-45deg, var(--np-red) 0 14px, #fbf6ea 14px 28px) border-box;
+  box-shadow: var(--article-shadow-normal);
+  color: #fbf6ea;
+  font-family: var(--np-font-body);
+}
+
+[data-theme=dark] .l-post-content .kg-product-card .kg-product-card-container {
+  --np-product-panel: #163a30;
+}
+
+.l-post-content .kg-product-card .kg-product-card-image {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .3);
+}
+
+.l-post-content .kg-product-card h4.kg-product-card-title {
+  font-family: var(--np-font-display);
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.15;
+  color: #fbf6ea;
+}
+
+.l-post-content .kg-product-card .kg-product-card-description p,
+.l-post-content .kg-product-card .kg-product-card-description ol,
+.l-post-content .kg-product-card .kg-product-card-description ul {
+  font-family: var(--np-font-body);
+  font-size: 1rem;
+  line-height: 1.55;
+  color: #fbf6ea;
+  opacity: .88;
+}
+
+.l-post-content .kg-product-card .kg-product-card-description a {
+  color: var(--np-gold-light);
+}
+
+/* Star ratings: gold stars, unfilled ones a faint cream */
+.l-post-content .kg-product-card .kg-product-card-rating {
+  color: var(--np-gold-light);
+}
+
+.l-post-content .kg-product-card .kg-product-card-rating-star {
+  width: 22px;
+  height: 22px;
+}
+
+.l-post-content .kg-product-card .kg-product-card-rating-star svg {
+  width: 18px;
+  height: 18px;
+  opacity: .25;
+}
+
+.l-post-content .kg-product-card .kg-product-card-rating-active.kg-product-card-rating-star svg {
+  opacity: 1;
+}
+
+/* The theme's red pill, as on the homepage hero */
+.l-post-content .kg-product-card a.kg-product-card-button {
+  height: auto;
+  min-height: 46px;
+  margin-top: 6px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  background-color: var(--np-red) !important;
+  color: #ffffff !important;
+  font-family: var(--np-font-body) !important;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.2;
+  letter-spacing: .01em;
+  text-align: center;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, .9) inset, 0 6px 16px rgba(0, 0, 0, .3);
+  transition: transform .2s var(--np-ease), box-shadow .2s var(--np-ease), background-color .2s ease;
+}
+
+.l-post-content .kg-product-card a.kg-product-card-button:hover {
+  opacity: 1;
+  background-color: var(--np-red-deep) !important;
+  transform: translateY(-2px);
+}
+
+.l-post-content .kg-product-card a.kg-product-card-button:focus-visible {
+  outline: 3px solid var(--np-gold-light);
+  outline-offset: 3px;
+}
+
+@media only screen and (max-width: 47.99rem) {
+  .l-post-content .kg-product-card .kg-product-card-container {
+    padding: 18px 18px 20px;
+  }
+
+  .l-post-content .kg-product-card h4.kg-product-card-title {
+    font-size: 1.4rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .l-post-content .kg-product-card a.kg-product-card-button:hover {
+    transform: none;
+  }
+}
