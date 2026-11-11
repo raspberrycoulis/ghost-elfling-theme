@@ -2159,3 +2159,30 @@ a[href*="/author/"] {
     transform: none;
   }
 }
+
+/* 31. Ghost announcement bar
+   ==========================================================================
+   Ghost adds the bar at the very top of the page. festive.js keeps
+   --np-announcement-offset equal to how much of the bar is still on screen,
+   so the fixed header and reading progress bar sit just below it, then move
+   back to the top as it scrolls away or is closed. Without a bar it is 0. */
+
+.m-header,
+.np-progress {
+  top: var(--np-announcement-offset, 0px);
+}
+
+/* The mobile menu lives inside the header, so it opens just below the bar.
+   Shorten it by the same amount so its bottom stays on screen. (On wider
+   screens .m-menu is the header's own navigation row, so leave it alone.) */
+@media only screen and (max-width: 47.99rem) {
+  .np-announcement-visible .m-menu {
+    height: calc(100vh - var(--np-announcement-offset, 0px));
+    height: calc(100dvh - var(--np-announcement-offset, 0px));
+  }
+}
+
+/* The full-screen search opens above the bar (Ghost gives the bar z-index 90) */
+.m-search.opened {
+  z-index: 100;
+}

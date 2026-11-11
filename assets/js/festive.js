@@ -231,6 +231,70 @@
   }
 
   /* ---------------------------------------------------------------------
+   * Ghost announcement bar
+   * Ghost adds the bar at the very top of the page, above our fixed header.
+   * Keep --np-announcement-offset equal to how much of the bar is still on
+   * screen, so the header and reading progress bar sit just below it and
+   * move back to the top as it scrolls away or is closed.
+   * ------------------------------------------------------------------- */
+  function initAnnouncementBarOffset() {
+    var docStyle = document.documentElement.style
+    var bar = null
+    var current = -1
+    var ticking = false
+
+    function update() {
+      ticking = false
+      var offset = 0
+      if (bar && bar.isConnected) {
+        offset = Math.max(0, Math.round(bar.getBoundingClientRect().bottom))
+      }
+      if (offset !== current) {
+        current = offset
+        docStyle.setProperty('--np-announcement-offset', offset + 'px')
+        document.documentElement.classList.toggle('np-announcement-visible', offset > 0)
+      }
+    }
+
+    function schedule() {
+      if (!ticking) {
+        ticking = true
+        window.requestAnimationFrame(update)
+      }
+    }
+
+    // The bar's height changes when Ghost renders it, when the text wraps and when it is closed
+    var sizeWatcher = null
+    if ('ResizeObserver' in window) {
+      sizeWatcher = new ResizeObserver(schedule)
+    } else if ('MutationObserver' in window) {
+      sizeWatcher = new MutationObserver(schedule)
+    }
+
+    // Ghost's script may add the bar before or after this runs
+    function findBar() {
+      var found = document.getElementById('announcement-bar-root')
+      if (found && found !== bar) {
+        bar = found
+        if (sizeWatcher && 'ResizeObserver' in window) {
+          sizeWatcher.observe(bar)
+        } else if (sizeWatcher) {
+          sizeWatcher.observe(bar, { childList: true, subtree: true })
+        }
+      }
+      schedule()
+    }
+
+    if ('MutationObserver' in window) {
+      new MutationObserver(findBar).observe(document.body, { childList: true })
+    }
+    window.addEventListener('scroll', schedule, { passive: true })
+    window.addEventListener('resize', schedule)
+    window.addEventListener('load', findBar)
+    findBar()
+  }
+
+  /* ---------------------------------------------------------------------
    * Share buttons: copy link, and the device's own share sheet where available
    * ------------------------------------------------------------------- */
   function initShare() {
@@ -310,6 +374,7 @@
     initSnowToggle()
     syncDarkModeSwitch()
     initReadingProgress()
+    initAnnouncementBarOffset()
     initShare()
   })
 
